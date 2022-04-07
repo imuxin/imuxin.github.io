@@ -1,0 +1,40 @@
+# Pensieve
+
+## What is Pensieve
+
+Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Pensieve), is imuxin's personal container for storing thinkings.
+
+## Signpost
+
+<i class="bi bi-signpost-fill"></i> [signpost](https://imuxin.github.io/#content/index) will guide you on the site.
+
+## About me
+
+- <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
+- 📜 Blog: https://imuxin.github.io, it's being work in progress.
+- 🌱 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [vlang](https://github.com/vlang/v).
+- 🤔 Since open source projects are springing up, as a human being with only a few decades life, we can not master all of them. I would say there must be some basic, shared and simple core thinkings or some theoretical methods. I will spend all my life on feaguring out the essence of CS. I would start with research CS development history.
+- 🤟 [No Silver Bullet – Essence and Accident in Software Engineering](https://en.wikipedia.org/wiki/No_Silver_Bullet)
+- 💡 Ideas(WIP)
+  - I'm Making a serial tutorial with topic build \* to master a programming language. ⏳
+  - I'm Building a `todo` command line tools to manage personal tasks. I would intergrate with [nullboard](https://github.com/apankrat/nullboard), because I like its simple design. ⏳
+  - I'm Building a `gitQL` to help quick understand an unfamiliar project based on git source controll. And I would intergrate with [metabase](https://github.com/metabase/metabase). ⏳
+- 📫 How to reach me: Send email to <a href="mailto:chengqinglin@icloud.com">chengqinglin@icloud.com</a> <br>
+- <i class="bi bi-geo-alt-fill"></i> China, Nanjing
+
+## The website is inspired by
+
+- [English++](https://englishplusplus.jcj.uj.edu.pl/index.html)
+- [ES6 入门教程](https://es6.ruanyifeng.com/)
+
+<div class="grey-margin">
+  <p>Pins</p>
+  <ul>
+    <li><a href="https://imuxin.github.io/susv4-2018/">The Open Group Base Specifications Issue 7, 2018 edition</a></li>
+  </ul>
+  <p>Hot Links</p>
+  <ul>
+    <li><a href="https://www.libhunt.com/">LibHunt</a></li>
+    <li><a href="https://excalidraw.com/">Excalidraw</a></li>
+  </ul>
+</div>

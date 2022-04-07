@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Blockquotes";
+  src: url("../fonts/AveriaGruesaLibre-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "opensans-condensed";
+  src: url("../fonts/OpenSansCondensed-Light.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("../fonts/Inconsolata.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inconsolata-Medium";
+  src: url("../fonts/Inconsolata-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora-Bold";
+  src: url("../fonts/Lora-Bold.ttf") format("truetype");
+}
