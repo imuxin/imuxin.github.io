@@ -1,6 +1,7 @@
 # Signpost
 
-## build \* to learn programming language
+- [How to bootstrap a kubernetes by using k0s](#content/k0s-bootstrap)
+- [InfoQ trends](#content/infoq-trends)
 
 <div class="grey-margin">
   <p>useful links:</p>
