@@ -47,6 +47,9 @@
    cp k0s-airgap-bundle-v1.23.5+k0s.0-amd64 /var/lib/k0s/images/bundle_file
 
    mv nerdctl /usr/local/bin/
+
+   # export kube config
+   k0s kubeconfig admin > ~/.kube/config
    mv kubectl /usr/local/bin/
    ```
 
