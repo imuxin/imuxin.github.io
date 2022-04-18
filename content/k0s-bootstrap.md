@@ -56,7 +56,7 @@
 ## Start k0s
 
 ```bash
-k0s install controller -c k0s.yaml --enable-worker
+k0s install controller -c k0s.yaml --enable-worker --single
 ```
 
 ## Verify
