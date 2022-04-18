@@ -2,6 +2,9 @@
   cursor: url('/assets/img/cursor/default-mini.svg'), default;
 } */
 
+/* link
+*/
+
 body a {
   font-family: var(--link-font-family);
 }
