@@ -43,7 +43,7 @@
    mv k0s-v1.23.5+k0s.0-amd64 /usr/bin/k0s
 
    # handle airgap image file
-   mkdir /var/lib/k0s/images/bundle_file
+   mkdir -p /var/lib/k0s/images/
    cp k0s-airgap-bundle-v1.23.5+k0s.0-amd64 /var/lib/k0s/images/bundle_file
 
    mv nerdctl /usr/local/bin/
@@ -53,10 +53,25 @@
    mv kubectl /usr/local/bin/
    ```
 
+1. nerdctl.toml
+
+   ```bash
+   mkdir -p /etc/nerdctl/ && \
+   tee /etc/nerdctl/nerdctl.toml <<EOF
+   debug          = false
+   debug_full     = false
+   address        = "unix:///run/k0s/containerd.sock"
+   namespace      = "k8s.io"
+   cgroup_manager = "cgroupfs"
+   EOF
+   ```
+
 ## Start k0s
 
 ```bash
 k0s install controller -c k0s.yaml --enable-worker --single
+
+k0s start
 ```
 
 ## Verify
