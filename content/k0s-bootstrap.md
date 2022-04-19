@@ -66,6 +66,11 @@
    EOF
    ```
 
+1. Load iptable_nat kernal module
+   ```bash
+   modprobe br_netfilter ; modprobe nf_nat ; modprobe xt_REDIRECT ; modprobe xt_owner; modprobe iptable_nat; modprobe iptable_mangle; modprobe iptable_filter
+   ```
+
 ## Start k0s
 
 ```bash
