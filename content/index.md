@@ -1,6 +1,7 @@
 # Signpost
 
 - [How to bootstrap a kubernetes by using k0s](#content/k0s-bootstrap)
+- [How to bootstrap a istio 1-13](#content/istio-1-13-bootstrap)
 - [InfoQ trends](#content/infoq-trends)
 
 <div class="grey-margin">
