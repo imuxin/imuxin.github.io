@@ -1,10 +1,8 @@
 :root {
-  --h1-font-family: "Lora-Bold";
-  --h2-font-family: "opensans-condensed";
-  --h3-font-family: "Roboto";
+  --h1-font-family: "Inconsolata";
+  --h2-font-family: "Inconsolata";
+  --h3-font-family: "Inconsolata";
   --body-font-family: "Inconsolata"; /* Overlock */
-  --link-font-family: "Inconsolata-Medium";
-  --grey-margin-font-family: "Roboto";
-  --strong-font-family: "Roboto-Bold";
+  --grey-margin-font-family: "Inconsolata";
   --quotes-font-family: "Blockquotes";
 }

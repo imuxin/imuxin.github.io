@@ -7,8 +7,8 @@ var fonts = [
     "font-family": "Blockquotes",
   },
   {
-    "title": "OpenSansCondensed-Light",
-    "font-family": "opensans-condensed",
+    "title": "Inconsolata",
+    "font-family": "Inconsolata",
   },
 ]
 

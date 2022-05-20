@@ -6,7 +6,8 @@
 */
 
 body a {
-  font-family: var(--link-font-family);
+  font-family: var(--body-font-family);
+  font-weight: 400;
 }
 
 .menu a {
@@ -37,7 +38,7 @@ body a {
 a,
 a:link {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   color: #3c5872;
   text-align: left;
   /* cursor: url('/assets/img/cursor/pointer.svg'), pointer !important; */
@@ -58,8 +59,8 @@ b {
 
 body {
   font-family: var(--body-font-family), Trebuchet MS, Sans-Serif;
-  font-weight: 600;
-  font-size: 90%;
+  font-weight: 500;
+  font-size: 92%;
   margin: 0px auto;
   background: url(../img/background.png) repeat;
   color: #000;
@@ -116,7 +117,8 @@ body {
 }
 
 .content .content-toc {
-  font-family: var(--link-font-family), Sans-Serif;
+  font-family: var(--body-font-family), Sans-Serif;
+  font-weight: 400;
 }
 
 .content h1 {
@@ -139,12 +141,12 @@ body {
 .content h3 {
   color: #505050;
   font-family: var(--h3-font-family), Georgia, Sans Serif;
-  font-size: 110%;
+  font-size: 129%;
   font-weight: bold;
 }
 
 .content h4 {
-  font-size: 100%;
+  font-size: 107%;
   text-decoration: underline;
 }
 
@@ -159,12 +161,13 @@ body {
 }
 
 .content strong {
-  font-family: var(--strong-font-family);
+  font-family: var(--body-font-family);
+  font-weight: 900;
   font-size: 100%;
 }
 
 .content p {
-  text-align: justify;
+  line-height: 1.2em;
 }
 
 /****** Quote style *****
@@ -364,6 +367,7 @@ th:first-child {
 
 .grey-margin p {
   font-family: var(--grey-margin-font-family);
+  font-weight: 600;
   margin-left: 6px;
   margin-bottom: 7px;
   font-size: 108%;
@@ -372,10 +376,6 @@ th:first-child {
 ol {
   list-style-type: decimal;
   counter-reset: item;
-}
-
-ol li {
-  padding-top: 10px;
 }
 
 ol ol {
