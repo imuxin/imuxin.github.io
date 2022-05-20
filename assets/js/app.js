@@ -396,7 +396,9 @@ function wrap_pre() {
 }
 
 function wrap_img() {
-  $("img").wrap("<div class='img-container'></div>");
+  $("img").attr("data-zoomable", true);
+  $("img").wrap(`<div class='img-container'></div>`);
+  mediumZoom('[data-zoomable]');
 }
 
 function wrap_blockquote_signature() {
