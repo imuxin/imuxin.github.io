@@ -1,4 +1,4 @@
-# Common commands
+# Useful commands
 
 Exec an network namespace.
 ```bash

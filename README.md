@@ -11,8 +11,9 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 ## About me
 
 - <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
+- 💪: [Go](https://go.dev/), [Python](https://www.python.org/)
 - 📜 Blog: https://imuxin.github.io, it's being work in progress.
-- 🌱 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [vlang](https://github.com/vlang/v).
+- 🐾 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [vlang](https://github.com/vlang/v), [Clojure](https://clojure.org/).
 - 🤔 Since open source projects are springing up, as a human being with only a few decades life, we can not master all of them. I would say there must be some basic, shared and simple core thinkings or some theoretical methods. I will spend all my life on feaguring out the essence of CS. I would start with research CS development history.
 - 🤟 [No Silver Bullet – Essence and Accident in Software Engineering](https://en.wikipedia.org/wiki/No_Silver_Bullet)
 - 💡 Ideas(WIP)
@@ -36,5 +37,10 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
   <ul>
     <li><a href="https://www.libhunt.com/">LibHunt</a></li>
     <li><a href="https://excalidraw.com/">Excalidraw</a></li>
+  </ul>
+  <p>News</p>
+  <ul>
+    <li><a href="https://quastor.substack.com/">quastor.substack</a></li>
+    <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
   </ul>
 </div>

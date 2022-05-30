@@ -189,57 +189,6 @@ function li_create_linkage(li_tag, header_level) {
   });
 }
 
-function create_page_anchors() {
-  // create page anchors by matching li's to headers
-  // if there is a match, create click listeners
-  // and scroll to relevant sections
-
-  // go through header level 1 to 3
-  for (var i = 2; i <= 4; i++) {
-    // parse all headers
-    var headers = [];
-    $('#content h' + i).map(function() {
-      var content = $(this).text();
-      headers.push(content);
-      $(this).addClass(replace_symbols(content));
-      this.id = replace_symbols(content);
-      $(this).hover(function () {
-        $(this).html(content +
-          ' <a href="#' + location.hash.split('#')[1] +
-          '#' +
-          replace_symbols(content) +
-          '" class="section-link">§</a> <a href="#' +
-          location.hash.split('#')[1] + '" onclick="goTop()">⇧</a>');
-      }, function () {
-        $(this).html(content);
-      });
-      $(this).on('click', 'a.section-link', function(event) {
-        event.preventDefault();
-        history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
-        goSection(replace_symbols(content));
-      });
-    });
-
-    if (location.hash === "") { // skip home page content-toc
-      return
-    }
-    (function () {
-      if ((i === 2) && headers.length !== 0) {
-        var ul_tag = $('<ol></ol>')
-          .insertAfter('#content h1')
-          .addClass('content-toc')
-          .attr('id', 'content-toc');
-
-        for (var j = 0; j < headers.length; j++) {
-          var li_tag = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + headers[j] + '">' + headers[j] + '</a>');
-          ul_tag.append(li_tag);
-          li_create_linkage(li_tag, i);
-        }
-      }
-    })();
-
-  }
-}
 
 /**
  *
@@ -268,7 +217,7 @@ function generate_content_toc(header_maps) {
  *
  * @param {array} header_maps
  */
-function generate_content_toc2(header_maps) {
+function generate_content_toc(header_maps) {
   if (header_maps.length === 0) {
     return
   }
@@ -305,7 +254,7 @@ function generate_content_toc2(header_maps) {
   return toc;
 }
 
-function create_page_anchors2() {
+function create_page_anchors() {
   // create page anchors by matching li's to headers
   // if there is a match, create click listeners
   // and scroll to relevant sections
@@ -341,7 +290,7 @@ function create_page_anchors2() {
   if (location.hash === "") { // skip home page content-toc
     return
   }
-  generate_content_toc2(header_maps);
+  generate_content_toc(header_maps);
 }
 
 function native_jump() {
@@ -474,7 +423,7 @@ function router() {
     }
     normalize_paths();
     native_jump(); // must before create_page_anchors function
-    create_page_anchors2();
+    create_page_anchors();
     wrap_table();
     wrap_pre();
     wrap_img();
