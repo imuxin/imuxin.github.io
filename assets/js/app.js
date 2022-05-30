@@ -161,9 +161,9 @@ function replace_symbols(text) {
     .replace(/[()]/g, '');
 }
 
-function li_create_linkage(li_tag, header_level) {
+function li_create_linkage(li_tag, header_level, index) {
   // add custom id and class attributes
-  html_safe_tag = replace_symbols(li_tag.text());
+  html_safe_tag = replace_symbols(add_prefix(index, li_tag.text()));
   li_tag.attr('data-src', html_safe_tag);
   li_tag.attr("class", "link");
 
@@ -227,10 +227,10 @@ function generate_content_toc(header_maps) {
     .addClass('content-toc')
     .attr('id', 'content-toc');
 
-  header_maps.forEach(function (header) {
-    var li_tag = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + header.content + '">' + header.content + '</a>');
+  header_maps.forEach(function (header, index) {
+    var li_tag = $('<li></li>').html('<a href="#' + location.hash.split('#')[1] + '#' + add_prefix(index, header.content) + '">' + header.content + '</a>');
     var curLevelNumber = parseInt(header.headerLevel.slice(1));
-    li_create_linkage(li_tag, curLevelNumber);
+    li_create_linkage(li_tag, curLevelNumber, index);
     header.li = li_tag;
 
     greaterThan(Object.keys(levels_map), header.headerLevel).forEach(function (level) {
@@ -254,6 +254,10 @@ function generate_content_toc(header_maps) {
   return toc;
 }
 
+function add_prefix(prefix, target) {
+  return prefix + "-" + target
+}
+
 function create_page_anchors() {
   // create page anchors by matching li's to headers
   // if there is a match, create click listeners
@@ -261,7 +265,7 @@ function create_page_anchors() {
 
   // go through header level 2 to 3
   header_maps = []
-  $('#content h2,h3').map(function () {
+  $('#content h2,h3').map(function (index) {
     var content = $(this).text();
     var ele = this.localName;
     header_maps.push(
@@ -269,13 +273,13 @@ function create_page_anchors() {
         content,
         headerLevel: ele,
       });
-    $(this).addClass(replace_symbols(content));
-    this.id = replace_symbols(content);
+    $(this).addClass(replace_symbols(add_prefix(index, content)));
+    this.id = replace_symbols(add_prefix(index, content));
     $(this).hover(function () {
       $(this).html(content +
         ' <a href="#' + location.hash.split('#')[1] +
         '#' +
-        replace_symbols(content) +
+        replace_symbols(add_prefix(index, content)) +
         '" class="section-link">§</a> <a href="#' +
         location.hash.split('#')[1] + '" onclick="goTop()">⇧</a>');
     }, function () {
@@ -283,8 +287,8 @@ function create_page_anchors() {
     });
     $(this).on('click', 'a.section-link', function(event) {
       event.preventDefault();
-      history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(content));
-      goSection(replace_symbols(content));
+      history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(add_prefix(index, content)));
+      goSection(replace_symbols(add_prefix(index, content)));
     });
   });
   if (location.hash === "") { // skip home page content-toc
