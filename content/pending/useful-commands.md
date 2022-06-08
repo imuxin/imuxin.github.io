@@ -3,6 +3,13 @@
 Exec an network namespace.
 ```bash
 nsenter --net=/var/run/docker/netns/060b5164348d bash
+# or
+nsenter -n -t{pid}
+```
+
+Show some process full command
+```bash
+ps auxww
 ```
 
 Lookup a domain's ip address at a specific dns server.
