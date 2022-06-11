@@ -27,3 +27,8 @@ ln -sfT /proc/$pid/ns/net /var/run/netns/$container_id
 # e.g. show stats about eth0 inside the container
 ip netns exec "${container_id}" ip -s link show eth0
 ```
+
+Check /etc/fstab working correctly
+```
+sudo mount -a
+```
