@@ -1,23 +1,23 @@
 # Useful commands
 
-Exec an network namespace.
+## Exec an network namespace
 ```bash
 nsenter --net=/var/run/docker/netns/060b5164348d bash
 # or
 nsenter -n -t{pid}
 ```
 
-Show some process full command
+## Show some process full command
 ```bash
 ps auxww
 ```
 
-Lookup a domain's ip address at a specific dns server.
+## Lookup a domain's ip address at a specific dns server.
 ```bash
 dig sleep.foo.svc.cluster.local @10.244.0.53
 ```
 
-Docker networking namespace not visible in ip netns list
+## Docker networking namespace not visible in ip netns list
 ```bash
 # (as root)
 pid=$(docker inspect -f '{{.State.Pid}}' ${container_id})
@@ -28,7 +28,13 @@ ln -sfT /proc/$pid/ns/net /var/run/netns/$container_id
 ip netns exec "${container_id}" ip -s link show eth0
 ```
 
-Check /etc/fstab working correctly
+## Check /etc/fstab working correctly
 ```
 sudo mount -a
+```
+
+## Listing all resources in a namespace
+```bash
+kubectl api-resources --verbs=list --namespaced -o name \
+   | xargs -n 1 kubectl get --show-kind --ignore-not-found -n {namespace}
 ```
