@@ -345,6 +345,9 @@ function wrap_pre() {
     <div class='menu-button close'></div>
     <div class='menu-button minimise'></div>
     <div class='menu-button maximise'></div>
+    <div class='menu-button clipboard'>
+      <button title="Copy to clipboard" class="copy" aria-label="Copy to clipboard"><i class="bi bi-clipboard-fill"></i></button>
+    </div>
   `);
 }
 
@@ -501,5 +504,20 @@ function router() {
   }).always(function() {
     clearInterval(loading);
     $(app.loading_id).hide();
+    enable_code_clipboard();
+  });
+}
+
+function enable_code_clipboard() {
+  $("div.menu-button.clipboard").click(function(e) {
+    let code = $(e.currentTarget).next().text();
+    navigator.clipboard.writeText(code);
+    $("i", this).removeClass("bi-clipboard-fill");
+    $("i", this).addClass("bi-clipboard-check-fill");
+  });
+
+  $("div.menu-button.clipboard").mouseout(function(){
+    $("i", this).removeClass("bi-clipboard-check-fill");
+    $("i", this).addClass("bi-clipboard-fill");
   });
 }
