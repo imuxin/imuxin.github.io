@@ -2,6 +2,10 @@
   cursor: url('/assets/img/cursor/default-mini.svg'), default;
 } */
 
+ul li {
+  margin: 0.2rem auto;
+}
+
 /* link
 */
 
