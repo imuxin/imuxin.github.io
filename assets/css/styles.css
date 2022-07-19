@@ -90,6 +90,14 @@ body {
   position: relative;
 }
 
+.giscus {
+  width: 810px;
+  background: white;
+  border-radius: 4px;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 45px 45px 45px;
+}
+
 .content .explanation {
   text-align: justify;
   margin: 1em 1em 3em 1em;

@@ -505,6 +505,7 @@ function router() {
     clearInterval(loading);
     $(app.loading_id).hide();
     enable_code_clipboard();
+    load_giscus_script();
   });
 }
 
@@ -520,4 +521,23 @@ function enable_code_clipboard() {
     $("i", this).removeClass("bi-clipboard-check-fill");
     $("i", this).addClass("bi-clipboard-fill");
   });
+}
+
+function load_giscus_script() {
+  var script = document.createElement('script');
+  script.setAttribute("src", "https://giscus.app/client.js");
+  script.setAttribute("data-repo", "imuxin/imuxin.github.io");
+  script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkzNTkzODE5MzM=");
+  script.setAttribute("data-category", "Comments");
+  script.setAttribute("data-category-id", "DIC_kwDOFWu7rc4CQTiD");
+  script.setAttribute("data-mapping", "title");
+  script.setAttribute("data-reactions-enabled", "1");
+  script.setAttribute("data-emit-metadata", "0");
+  script.setAttribute("data-input-position", "bottom");
+  script.setAttribute("data-theme", "light");
+  script.setAttribute("data-lang", "en");
+  script.setAttribute("crossorigin", "anonymous");
+  script.setAttribute("async", "");
+
+  document.head.appendChild(script);
 }
