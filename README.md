@@ -29,20 +29,24 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 - [ES6 入门教程](https://es6.ruanyifeng.com/)
 
 <div class="grey-margin">
-  <p>Pins</p>
+  <p>📌 Pinned</p>
   <ul>
     <li><a href="https://imuxin.github.io/susv4-2018/">The Open Group Base Specifications Issue 7, 2018 edition</a></li>
   </ul>
-  <p>Hot Links</p>
+  <p>🔥 Hot Links</p>
   <ul>
     <li><a href="https://www.libhunt.com/">LibHunt</a></li>
     <li><a href="https://excalidraw.com/">Excalidraw</a></li>
     <li><a href="https://www.opensourcealternative.to/">Opensource Alternative to</a></li>
   </ul>
-  <p>News</p>
+  <p>📰 News</p>
   <ul>
     <li><a href="https://quastor.substack.com/">quastor.substack</a></li>
     <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
     <li><a href="https://us1.campaign-archive.com/home/?u=faa8eb4ef3a111cef92c4f3d4&id=e505c88a2e">Hacker News Archives Daily</a></li>
+  </ul>
+  <p>⭐️ Collect</p>
+  <ul>
+    <li><a href="https://draveness.me/">面向信仰编程</a></li>
   </ul>
 </div>

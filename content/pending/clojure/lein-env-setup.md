@@ -59,4 +59,3 @@ or
 1. [lein http proxies doc](https://github.com/technomancy/leiningen/wiki/HTTP-Proxies)
 1. [clojars-web mirrors doc](https://github.com/clojars/clojars-web/wiki/Mirrors)
 1. [github issue: Mirror repository configured in user profile is not picked up when resolving plugins](https://github.com/technomancy/leiningen/issues/1722)
-1. []()
