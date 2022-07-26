@@ -361,11 +361,13 @@ function wrap_blockquote_signature() {
   $("blockquote em.sig").parent().addClass("text-align-right");
 }
 
+// 外部链接视图渲染
 function wrap_external_link() {
   $("a").map(function () {
     var href = $(this).attr("href");
     if (href != undefined && href.startsWith("http") && !href.includes("imuxin.github.io")) {
       $(this).addClass("external");
+      $(this).attr("target", "_blank");
     }
   });
 }
