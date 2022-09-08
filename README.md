@@ -8,6 +8,10 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 
 <i class="bi bi-signpost-fill"></i> [signpost](https://imuxin.github.io/#content/index) will guide you on the site.
 
+## Repositories
+
+- [kubectl-watch](https://github.com/imuxin/kubectl-watch), another watch tool with visualization view of delta change for kubernetes resources.
+
 ## About me
 
 - <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
@@ -48,5 +52,6 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
   <p>⭐️ Collect</p>
   <ul>
     <li><a href="https://draveness.me/">面向信仰编程</a></li>
+    <li><a href="https://course.rs/about-book.html">Rust 语言圣经</a></li>
   </ul>
 </div>
