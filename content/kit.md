@@ -22,6 +22,10 @@ github: https://github.com/gsamokovarov/jump
 
 ### vim
 
+### ImHex
+
+github: https://github.com/WerWolv/ImHex
+
 ## App
 
 ### VSCode

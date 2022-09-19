@@ -43,6 +43,7 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
     <li><a href="https://www.libhunt.com/">LibHunt</a></li>
     <li><a href="https://excalidraw.com/">Excalidraw</a></li>
     <li><a href="https://www.opensourcealternative.to/">Opensource Alternative to</a></li>
+    <li><a href="https://ossinsight.io/">OSS Insight</a></li>
   </ul>
   <p>📰 News</p>
   <ul>

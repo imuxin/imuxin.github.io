@@ -38,3 +38,29 @@ sudo mount -a
 kubectl api-resources --verbs=list --namespaced -o name \
    | xargs -n 1 kubectl get --show-kind --ignore-not-found -n {namespace}
 ```
+
+## Find package which provides a particular binary file or library file
+
+```bash
+# debian, ubuntu
+dpkg -S [file name]
+
+# centos
+rpm -qf --whatprovides [file name]
+## or
+yum whatprovides [file name]
+```
+
+## Finding file and libraries provided by a particular package
+
+```
+dpkg -L [package name]
+
+rpm -ql [package name]
+```
+
+## Find all symbols exported from a shared object
+
+```
+readelf -Ws --dyn-syms /path/to/libxxx.so
+```

@@ -5,18 +5,17 @@
 - [InfoQ trends](#content/infoq-trends)
 - [How to bootstrap a `kubernetes` by using `k0s`](#content/pending/k0s-bootstrap)
 - [How to bootstrap a `istio` 1-13](#content/pending/istio-1-13-bootstrap)
+- [Useful commands](#content/pending/useful-commands)
 
-## WIP
+## PL
 
 <blockquote class="tip">
-<p class="title">What does WIP mean?</p>
-<p>WIP means the following posts are still being editing</p>
+<p class="title">Abstract</p>
+<p>Documented the process of learning programming languages personally. <ins>Awesome resources</ins>, <ins>common knowledge</ins>, <ins>design patterns</ins>, <ins>algorithms</ins> and so on are covered.</p>
 </blockquote>
 
-
-- [`Clojure`: lein env setup](#content/pending/clojure/lein-env-setup)
-- [`Rust`: learning roadmap](#content/pending/rust/learning-roadmap)
-- [Useful commands](#content/pending/useful-commands)
+- [Rust](#content/pl/rust/index)
+- [Clojure](#content/pl/clojure/index)
 
 ## Pending
 

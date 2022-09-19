@@ -61,14 +61,13 @@ function greaterThan(array, sth) {
 }
 
 function toTitleCase(s) {
-    return s.replace(/\w[^\s-]*/g, function(txt){
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
+  return s.replace(/\w[^\s-]*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }
 
-function capitalize(s)
-{
-    return s[0].toUpperCase() + s.slice(1);
+function capitalize(s) {
+  return s[0].toUpperCase() + s.slice(1);
 }
 
 /**
@@ -108,12 +107,12 @@ function initialize() {
 }
 
 function goTop(e) {
-  if(e) e.preventDefault();
+  if (e) e.preventDefault();
   $('html, body').animate({
     scrollTop: 0
   }, 200);
   history.pushState(null, null, '#' + location.hash.split('#')[1]);
-  }
+}
 
 function goSection(sectionId, caseInsensive = false) {
   var target = $('#' + sectionId);
@@ -137,7 +136,7 @@ function init_edit_button() {
     alert("Error! You didn't set 'base_url' when calling app.run()!");
   } else {
     $(app.edit_id).show();
-    $(app.edit_id).on("click", function() {
+    $(app.edit_id).on("click", function () {
       var hash = location.hash.replace("#", "/");
       if (/#.*$/.test(hash)) {
         hash = hash.replace(/#.*$/, '');
@@ -168,7 +167,7 @@ function li_create_linkage(li_tag, header_level, index) {
   li_tag.attr("class", "link");
 
   // add click listener - on click scroll to relevant header section
-  li_tag.click(function(e) {
+  li_tag.click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     // scroll to relevant section
@@ -181,9 +180,9 @@ function li_create_linkage(li_tag, header_level, index) {
 
     // highlight the relevant section
     original_color = header.css("color");
-    header.animate({ color: "#25ba39", }, 800, function() {
+    header.animate({ color: "#25ba39", }, 800, function () {
       // revert back to orig color
-      $(this).animate({color: original_color}, 1500);
+      $(this).animate({ color: original_color }, 1500);
     });
     history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + li_tag.attr('data-src'));
   });
@@ -285,7 +284,7 @@ function create_page_anchors() {
     }, function () {
       $(this).html(content);
     });
-    $(this).on('click', 'a.section-link', function(event) {
+    $(this).on('click', 'a.section-link', function (event) {
       event.preventDefault();
       history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(add_prefix(index, content)));
       goSection(replace_symbols(add_prefix(index, content)));
@@ -310,7 +309,7 @@ function native_jump() {
     if (_id == "" || _hash != location.hash.split('#')[1]) {
       return
     }
-    $(this).on('click', function(event) {
+    $(this).on('click', function (event) {
       event.preventDefault();
       history.pushState(null, null, '#' + location.hash.split('#')[1] + '#' + replace_symbols(_id));
       goSection(replace_symbols(_id), true);
@@ -320,7 +319,7 @@ function native_jump() {
 
 function normalize_paths() {
   // images
-  $(app.content_id + " img").map(function() {
+  $(app.content_id + " img").map(function () {
     var src = $(this).attr("src").replace("./", "");
     if ($(this).attr("src").slice(0, 4) !== "http") {
       var pathname = location.pathname.substr(0, location.pathname.length - 1);
@@ -382,8 +381,8 @@ function show_loading() {
   $(app.content_id).html('');  // clear content
 
   // infinite loop until clearInterval() is called on loading
-  var loading = setInterval(function() {
-      $(app.loading_id).fadeIn(1000).fadeOut(1000);
+  var loading = setInterval(function () {
+    $(app.loading_id).fadeIn(1000).fadeOut(1000);
   }, 2000);
 
   return loading;
@@ -421,7 +420,7 @@ function router() {
   // otherwise get the markdown and render it
   var loading = show_loading();
 
-  $.get(path, function(data) {
+  $.get(path, function (data) {
     $(app.error_id).hide();
     $(app.content_id).html(marked(data));
 
@@ -440,11 +439,12 @@ function router() {
     wrap_external_link();
 
     // 完成代码高亮
-    $('#content code').map(function() {
+    $('#content code').map(function () {
       Prism.highlightElement(this);
     });
 
     var perc = app.save_progress ? store.get('page-progress') || 0 : 0;
+    console.log(perc);
     if (sectionId) {
       var target = $('#' + decodeURI(sectionId));
       if (target.length == 0) {
@@ -458,12 +458,10 @@ function router() {
       }
 
     } else {
-      if (location.hash !== '' || Boolean(perc)) {
-        if (Boolean(perc)) {
-          $('html, body').animate({
-            scrollTop: ($('body').height()-$(window).height())*perc
-          }, 200);
-        }
+      if (location.hash !== '' && perc >= 0) {
+        $('html, body').animate({
+          scrollTop: ($('body').height() - $(window).height()) * perc
+        }, 200);
       }
     }
 
@@ -474,19 +472,19 @@ function router() {
       var wh = $w.height();
       var h = $('body').height();
       var sHeight = h - wh;
-      $w.on('scroll', function() {
-        window.requestAnimationFrame(function(){
+      $w.on('scroll', function () {
+        window.requestAnimationFrame(function () {
           var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
           updateProgress(perc);
         });
       });
 
       function updateProgress(perc) {
-        $prog2.css({width: perc * 100 + '%'});
+        $prog2.css({ width: perc * 100 + '%' });
         app.save_progress && store.set('page-progress', perc);
       }
     }
-    (function() {
+    (function () {
       // When we begin, assume no images are loaded.
       var imagesLoaded = 0
       // Count the total number of images on the page when the page has loaded.
@@ -501,9 +499,9 @@ function router() {
         }
       });
     })();
-  }).fail(function() {
+  }).fail(function () {
     show_error();
-  }).always(function() {
+  }).always(function () {
     clearInterval(loading);
     $(app.loading_id).hide();
     enable_code_clipboard();
@@ -512,14 +510,14 @@ function router() {
 }
 
 function enable_code_clipboard() {
-  $("div.menu-button.clipboard").click(function(e) {
+  $("div.menu-button.clipboard").click(function (e) {
     let code = $(e.currentTarget).next().text();
     navigator.clipboard.writeText(code);
     $("i", this).removeClass("bi-clipboard-fill");
     $("i", this).addClass("bi-clipboard-check-fill");
   });
 
-  $("div.menu-button.clipboard").mouseout(function(){
+  $("div.menu-button.clipboard").mouseout(function () {
     $("i", this).removeClass("bi-clipboard-check-fill");
     $("i", this).addClass("bi-clipboard-fill");
   });
