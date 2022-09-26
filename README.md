@@ -11,14 +11,14 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 ## Repositories
 
 - [kubectl-watch](https://github.com/imuxin/kubectl-watch), another watch tool with visualization view of delta change for kubernetes resources.
-- [kube-sq](https://github.com/imuxin/kube-sql), sql for kubernetes. (is still under heavy development)
+- [kube-sql](https://github.com/imuxin/kube-sql), sql for kubernetes. (is still under heavy development)
 
 ## About me
 
 - <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
-- 💪 [Go](https://go.dev/), [Python](https://www.python.org/)
+- 💪 [Go](https://go.dev/), [Python](https://www.python.org/), [TS](https://www.typescriptlang.org/)
 - 📜 Blog: https://imuxin.github.io.
-- 🐾 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [vlang](https://github.com/vlang/v), [Clojure](https://clojure.org/).
+- 🐾 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [Clojure](https://clojure.org/).
 - 🤔 Since open source projects are springing up, as a human being with only a few decades life, we can not master all of them. I would say there must be some basic, shared and simple core thinkings or some theoretical methods. I will spend all my life on feaguring out the essence of CS. I would start with research CS development history.
 - 🤟 [No Silver Bullet – Essence and Accident in Software Engineering](https://en.wikipedia.org/wiki/No_Silver_Bullet)
 - 💡 Ideas(WIP)
