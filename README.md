@@ -54,7 +54,7 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
   <ul>
     <li><a href="https://ludwig.guru/">ludwig.guru</a></li>
     <li><a href="https://youglish.com/">youglish.com</a></li>
-    <li><a href="https://www.deepl.com/translator">deepl</li>
+    <li><a href="https://www.deepl.com/translator">deepl</a></li>
   </ul>
   <p>⭐️ Collect</p>
   <ul>
