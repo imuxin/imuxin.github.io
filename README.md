@@ -6,7 +6,7 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 
 ## Signpost
 
-<i class="bi bi-signpost-fill"></i> [signpost](https://imuxin.github.io/#content/index) will guide you on the site.
+<i class="bi bi-signpost-fill"></i> [signpost](https://imuxin.github.io/#signpost) will guide you on the site.
 
 ## Repositories
 
@@ -16,7 +16,7 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 ## About me
 
 - <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
-- 💪 [Go](https://go.dev/), [Python](https://www.python.org/), [TS](https://www.typescriptlang.org/)
+- 💪 [Go](https://go.dev/), [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/)
 - 📜 Blog: https://imuxin.github.io.
 - 🐾 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [Clojure](https://clojure.org/).
 - 🤔 Since open source projects are springing up, as a human being with only a few decades life, we can not master all of them. I would say there must be some basic, shared and simple core thinkings or some theoretical methods. I will spend all my life on feaguring out the essence of CS. I would start with research CS development history.

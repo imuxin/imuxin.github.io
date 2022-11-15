@@ -3,7 +3,7 @@
 } */
 
 ul li {
-  margin: 0.2rem auto;
+  margin: 0.5rem auto;
 }
 
 /* link
@@ -27,9 +27,11 @@ body a {
   align-items: center;
   text-align: center !important;
 }
+
 .menu a:hover {
   text-decoration: none;
 }
+
 .menu li {
   display: inline;
   float: left;
@@ -147,7 +149,7 @@ body {
   font-family: var(--h2-font-family), "Open Sans", Georgia, Sans Serif;
   font-size: 150%;
   margin: 25px 0px 10px 0px;
-  color: #ba3925;
+  color: #3c3c3c;
 }
 
 .content h3 {
@@ -220,26 +222,26 @@ blockquote.warning {
   color: #da422f;
 }
 
-blockquote > p.title {
+blockquote>p.title {
   font-size: 120%;
   font-weight: 600;
 }
 
-blockquote > p.title::before {
+blockquote>p.title::before {
   font-family: bootstrap-icons !important;
   padding-right: 5px;
   content: "\f26a";
 }
 
-blockquote.important > p.title::before {
+blockquote.important>p.title::before {
   content: "\f26a";
 }
 
-blockquote.tip > p.title::before {
+blockquote.tip>p.title::before {
   content: "\f468";
 }
 
-blockquote.warning > p.title::before {
+blockquote.warning>p.title::before {
   content: "\f33a";
 }
 
@@ -590,7 +592,7 @@ ol.content-toc li {
   display: block;
 }
 
-ol.content-toc > li::before {
+ol.content-toc>li::before {
   content: counters(item, ".") ". ";
   counter-increment: item;
 }
@@ -674,27 +676,35 @@ ol.content-toc li a {
   0% {
     transform: rotate(0deg);
   }
+
   5% {
     transform: rotate(90deg);
   }
+
   25% {
     transform: rotate(90deg);
   }
+
   30% {
     transform: rotate(180deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   55% {
     transform: rotate(270deg);
   }
+
   75% {
     transform: rotate(270deg);
   }
+
   80% {
     transform: rotate(1turn);
   }
+
   100% {
     transform: rotate(1turn);
   }
@@ -704,12 +714,14 @@ ol.content-toc li a {
   25% {
     left: 0;
   }
+
   45%,
   50% {
     left: 13.2px;
     width: 9.6px;
     height: 9.6px;
   }
+
   90% {
     left: 0;
     height: 8px;
@@ -721,44 +733,52 @@ ol.content-toc li a {
   25% {
     top: 0;
   }
+
   45%,
   50% {
     top: 13.2px;
     width: 9.6px;
     height: 9.6px;
   }
+
   90% {
     top: 0;
     height: 8px;
     width: 8px;
   }
 }
+
 @keyframes vectorDotsXR {
   25% {
     right: 0;
   }
+
   45%,
   50% {
     right: 13.2px;
     width: 9.6px;
     height: 9.6px;
   }
+
   90% {
     right: 0;
     height: 8px;
     width: 8px;
   }
 }
+
 @keyframes vectorDotsYR {
   25% {
     bottom: 0;
   }
+
   45%,
   50% {
     bottom: 13.2px;
     width: 9.6px;
     height: 9.6px;
   }
+
   90% {
     bottom: 0;
     height: 8px;
