@@ -1,8 +1,12 @@
 :root {
+  /* font */
   --h1-font-family: "Inconsolata";
   --h2-font-family: "Inconsolata";
   --h3-font-family: "Inconsolata";
-  --body-font-family: "Inconsolata"; /* Overlock */
+  --body-font-family: "Inconsolata";
   --grey-margin-font-family: "Inconsolata";
   --quotes-font-family: "Blockquotes";
+
+  /* color */
+  --color-border-muted: hsla(210, 18%, 87%, 1);
 }
