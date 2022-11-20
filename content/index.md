@@ -1,13 +1,5 @@
 # Software & Design
 
-- [InfoQ trends](#content/infoq-trends)
-
-## Cloud Native
-
-- [How to bootstrap a `kubernetes` by using `k0s`](#content/cloud-native/k0s-bootstrap)
-- [How to bootstrap a `istio` 1-13](#content/cloud-native/istio-1-13-bootstrap)
-- [All things `Linux containers`](#content/cloud-native/all-things-linux-containers)
-
 ## Programming
 
 <blockquote class="tip">
@@ -28,17 +20,24 @@
 
 - [index](#content/p/a/index)
 
-### Operating system
+## Operating system
 
-- [index](#content/p/os/index)
+- [index](#content/os/index)
 
-## Ops
+## Cloud Native
 
-- [Commands collection](#content/tips/useful-commands)
+- [How to bootstrap a `kubernetes` by using `k0s`](#content/cloud-native/k0s-bootstrap)
+- [How to bootstrap a `istio` 1-13](#content/cloud-native/istio-1-13-bootstrap)
+- [All things `Linux containers`](#content/cloud-native/all-things-linux-containers)
 
 ## Awesome
 
 - [500 Lines or Less](https://github.com/aosabook/500lines)
+
+## Others
+
+- [InfoQ trends](#content/infoq-trends)
+- [Commands collection](#content/tips/useful-commands)
 
 <div class="grey-margin">
   <p>backups:</p>

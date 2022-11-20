@@ -2,6 +2,18 @@
   cursor: url('/assets/img/cursor/default-mini.svg'), default;
 } */
 
+div.center {
+  text-align: center;
+}
+
+div.flex-center {
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+}
+
 ul li {
   margin: 0.5rem auto;
 }
@@ -607,7 +619,7 @@ ol.content-toc li a {
 #error {
   display: none;
   position: absolute;
-  padding-left: 340px;
+  padding-left: 280px;
   top: 200px;
   height: 17px;
   font-size: 14px;

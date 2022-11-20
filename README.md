@@ -2,7 +2,7 @@
 
 ## What is Pensieve
 
-Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Pensieve), is imuxin's personal container for storing thinkings.
+Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Pensieve), is imuxin's personal thinking container.
 
 ## Signpost
 
@@ -15,17 +15,19 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 
 ## About me
 
+Program was like a box of chocolates, you never know what you're gonna get.
+
 - <i class="bi bi-github"></i> [imuxin](https://github.com/imuxin)
-- 💪 [Go](https://go.dev/), [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/)
+- 💪 [Go](https://go.dev/), [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [Rust](https://github.com/rust-lang/rust).
 - 📜 Blog: https://imuxin.github.io.
-- 🐾 I'm currently leaning [Rust](https://github.com/rust-lang/rust), [C++](https://en.cppreference.com/w/), [Clojure](https://clojure.org/).
+- 🐾 I'm currently leaning [C++](https://en.cppreference.com/w/), [Clojure](https://clojure.org/).
 - 🤔 Since open source projects are springing up, as a human being with only a few decades life, we can not master all of them. I would say there must be some basic, shared and simple core thinkings or some theoretical methods. I will spend all my life on feaguring out the essence of CS. I would start with research CS development history.
 - 🤟 [No Silver Bullet – Essence and Accident in Software Engineering](https://en.wikipedia.org/wiki/No_Silver_Bullet)
 - 💡 Ideas(WIP)
   - I'm Making a serial tutorial with topic build \* to master a programming language. ⏳
   - I'm Building a `todo` command line tools to manage personal tasks. I would intergrate with [nullboard](https://github.com/apankrat/nullboard), because I like its simple design. ⏳
   - I'm Building a `gitQL` to help quick understand an unfamiliar project based on git source controll. And I would intergrate with [metabase](https://github.com/metabase/metabase). ⏳
-- 📫 How to reach me: Send email to <a href="mailto:chengqinglin@icloud.com">chengqinglin@icloud.com</a> <br>
+- 📫 Contact: <a href="mailto:chengqinglin@icloud.com">chengqinglin@icloud.com</a> <br>
 - <i class="bi bi-geo-alt-fill"></i> China, Nanjing
 
 ## The website is inspired by
