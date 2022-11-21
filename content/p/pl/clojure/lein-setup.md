@@ -1,3 +1,7 @@
+<div class="page-header">
+  <a href="#content/p/pl/clojure/index"><i class="bi bi-reply"></i>back</a>
+</div>
+
 # lein Environment Setup
 
 This post will show you how to solve that packages cannot be downloaded from clojars repository.
@@ -59,3 +63,7 @@ or
 1. [lein http proxies doc](https://github.com/technomancy/leiningen/wiki/HTTP-Proxies)
 1. [clojars-web mirrors doc](https://github.com/clojars/clojars-web/wiki/Mirrors)
 1. [github issue: Mirror repository configured in user profile is not picked up when resolving plugins](https://github.com/technomancy/leiningen/issues/1722)
+
+<div class="page-footer">
+  <a href="#content/p/pl/clojure/index"><i class="bi bi-reply"></i>back</a>
+</div>
