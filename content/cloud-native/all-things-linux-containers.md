@@ -16,7 +16,7 @@ Conceptually, a Linux container is made up of three things:
 
 A container's core is a process (group). The ER diagram for namespaces, cgroups and process (groups) looks as follows:
 
-![](n-p-c.png)
+![](./img/n-p-c.png)
 
 Read above ER diagram as: a process (group) can be in one or more namespaces and can be controlled by one or more cgroups
 
