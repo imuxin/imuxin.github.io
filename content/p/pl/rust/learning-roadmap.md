@@ -2,6 +2,7 @@
 
 ## Awesome repo for beginners
 
+- [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html), an introductory book about Rust, by Steve Klabnik and Carol Nichols, with contributions from the Rust Community.
 - [rust-lang/rustlings](https://github.com/rust-lang/rustlings), Small exercises to get you used to reading and writing Rust code!
 - [rustcc/RustPrimer](https://github.com/rustcc/RustPrimer), [read online](https://rustcc.gitbooks.io/rustprimer/content/)
 - [rust-lang/rust-by-example](https://github.com/rust-lang/rust-by-example), Learn Rust with examples (Live code editor included), [中文版](https://github.com/rust-lang-cn/rust-by-example-cn)
