@@ -64,3 +64,12 @@ rpm -ql [package name]
 ```
 readelf -Ws --dyn-syms /path/to/libxxx.so
 ```
+
+## Git compare
+
+1.12→1.13 commits:
+```
+git log --topo-order --oneline --decorate --stat --abbrev-commit origin/release-1.12..origin/release-1.13
+```
+或者使用github自带的compare功能
+https://github.com/istio/istio/compare/1.12.6...1.13.3
