@@ -28,6 +28,7 @@
 
 - [Kubernetes 分析系列](#content/cloud-native/k8s/index)
 - [Service Mesh 分析系列](#todo)
+- [istio release 分析](#content/cloud-native/istio-release-analysis)
 - [How to bootstrap a `kubernetes` by using `k0s`](#content/cloud-native/k0s-bootstrap)
 - [How to bootstrap a `istio` 1-13](#content/cloud-native/istio-1-13-bootstrap)
 - [All things `Linux containers`](#content/cloud-native/all-things-linux-containers)

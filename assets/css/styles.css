@@ -54,6 +54,7 @@ ul li {
 body a {
   font-family: var(--body-font-family);
   font-weight: 400;
+  word-break: break-all;
 }
 
 .menu a {
