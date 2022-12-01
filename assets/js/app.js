@@ -422,7 +422,7 @@ function router() {
 
   $.get(path, function (data) {
     $(app.error_id).hide();
-    $(app.content_id).html(marked(data));
+    $(app.content_id).html(marked.parse(data));
 
     if ($(app.content_id + " h1").text() === app.document_title) {
       document.title = app.document_title;
