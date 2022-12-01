@@ -9,24 +9,24 @@
 
 ### Language
 
-- [Rust](/content/p/pl/rust/index.md)
-- [Clojure](/content/p/pl/clojure/index.md)
+- [Rust](/content/p/pl/rust/README.md)
+- [Clojure](/content/p/pl/clojure/README.md)
 
 ### Design Pattern
 
-- [index](/content/p/dp/index.md)
+- [index](/content/p/dp/README.md)
 
 ### Algorithm
 
-- [index](/content/p/a/index.md)
+- [index](/content/p/a/README.md)
 
 ## Operating system
 
-- [index](/content/os/index.md)
+- [index](/content/os/README.md)
 
 ## Cloud Native
 
-- [Kubernetes 分析系列](/content/cloud-native/k8s/index.md)
+- [Kubernetes 分析系列](/content/cloud-native/k8s/README.md)
 - [Service Mesh 分析系列](/todo.md)
 - [istio release 分析](/content/cloud-native/istio-release-analysis.md)
 - [How to bootstrap a `kubernetes` by using `k0s`](/content/cloud-native/k0s-bootstrap.md)

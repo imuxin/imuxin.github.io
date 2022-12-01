@@ -2,7 +2,7 @@
 
 ## Software & Design
 
-🏠: [index page](/content/index.md)
+🏠: [index page](/content/README.md)
 
 TOC:
 

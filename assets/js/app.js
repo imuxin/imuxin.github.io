@@ -334,7 +334,7 @@ function wrap_blockquote_signature() {
 
 function generate_page_header_footer(path) {
   // console.log(path);
-  const index_md = "index.md";
+  const index_md = "README.md";
   const signpost_md = "signpost.md";
 
   if (["/" + app.index, "./" + signpost_md].includes(path)) {
