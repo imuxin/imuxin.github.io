@@ -2,7 +2,7 @@
 
 ## Software & Design
 
-🏠: [index page](#content/index)
+🏠: [index page](/content/index.md)
 
 TOC:
 
@@ -17,13 +17,13 @@ TOC:
 
 ## Literature
 
-- [历史](#todo)
-- [诗词](#todo)
+- [历史](/todo.md)
+- [诗词](/todo.md)
 
 ## Music
 
-- [TODO](#todo)
+- [TODO](/todo.md)
 
 ## Cooking
 
-- [TODO](#todo)
+- [TODO](/todo.md)

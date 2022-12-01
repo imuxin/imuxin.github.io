@@ -1,5 +1,5 @@
 # Tips
 
-* [googling](#content/tips/googling)
-* [proxy usages](#content/tips/proxy)
-* [vscode plugins](#content/tips/vscode-plugin)
+* [googling](/content/tips/googling.md)
+* [proxy usages](/content/tips/proxy.md)
+* [vscode plugins](/content/tips/vscode-plugin.md)

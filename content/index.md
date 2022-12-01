@@ -9,30 +9,30 @@
 
 ### Language
 
-- [Rust](#content/p/pl/rust/index)
-- [Clojure](#content/p/pl/clojure/index)
+- [Rust](/content/p/pl/rust/index.md)
+- [Clojure](/content/p/pl/clojure/index.md)
 
 ### Design Pattern
 
-- [index](#content/p/dp/index)
+- [index](/content/p/dp/index.md)
 
 ### Algorithm
 
-- [index](#content/p/a/index)
+- [index](/content/p/a/index.md)
 
 ## Operating system
 
-- [index](#content/os/index)
+- [index](/content/os/index.md)
 
 ## Cloud Native
 
-- [Kubernetes 分析系列](#content/cloud-native/k8s/index)
-- [Service Mesh 分析系列](#todo)
-- [istio release 分析](#content/cloud-native/istio-release-analysis)
-- [How to bootstrap a `kubernetes` by using `k0s`](#content/cloud-native/k0s-bootstrap)
-- [How to bootstrap a `istio` 1-13](#content/cloud-native/istio-1-13-bootstrap)
-- [All things `Linux containers`](#content/cloud-native/all-things-linux-containers)
-- [使用 docker 让容器间共享网络空间](#content/cloud-native/share-network-namespace-in-docker-zh)
+- [Kubernetes 分析系列](/content/cloud-native/k8s/index.md)
+- [Service Mesh 分析系列](/todo.md)
+- [istio release 分析](/content/cloud-native/istio-release-analysis.md)
+- [How to bootstrap a `kubernetes` by using `k0s`](/content/cloud-native/k0s-bootstrap.md)
+- [How to bootstrap a `istio` 1-13](/content/cloud-native/istio-1-13-bootstrap.md)
+- [All things `Linux containers`](/content/cloud-native/all-things-linux-containers.md)
+- [使用 docker 让容器间共享网络空间](/content/cloud-native/share-network-namespace-in-docker-zh.md)
 
 ## Awesome
 
@@ -40,8 +40,8 @@
 
 ## Others
 
-- [InfoQ trends](#content/infoq-trends)
-- [Commands collection](#content/tips/useful-commands)
+- [InfoQ trends](/content/infoq-trends.md)
+- [Commands collection](/content/tips/useful-commands.md)
 
 <div class="grey-margin">
   <p>backups:</p>
