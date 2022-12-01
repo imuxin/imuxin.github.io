@@ -9,7 +9,6 @@ var app = {
   error_id: "#error",
 
   // display elements
-  edit_button: false,
   save_progress: true, // 保存阅读进度
 
   // initialize function
@@ -95,12 +94,6 @@ var getHash = function (hash) {
 };
 
 function initialize() {
-  // initialize buttons
-
-  if (app.edit_button) {
-    init_edit_button();
-  }
-
   // page router
   router();
   $(window).on('hashchange', router);
@@ -129,27 +122,6 @@ function goSection(sectionId, caseInsensive = false) {
   $('html, body').animate({
     scrollTop: (target.offset().top)
   }, 300);
-}
-
-function init_edit_button() {
-  if (app.base_url === null) {
-    alert("Error! You didn't set 'base_url' when calling app.run()!");
-  } else {
-    $(app.edit_id).show();
-    $(app.edit_id).on("click", function () {
-      var hash = location.hash.replace("#", "/");
-      if (/#.*$/.test(hash)) {
-        hash = hash.replace(/#.*$/, '');
-      }
-      if (hash === "") {
-        hash = "/" + app.index.replace(".md", "");
-      }
-
-      window.open(app.base_url + hash + ".md");
-      // open is better than redirecting, as the previous page history
-      // with redirect is a bit messed up
-    });
-  }
 }
 
 function replace_symbols(text) {
@@ -360,6 +332,56 @@ function wrap_blockquote_signature() {
   $("blockquote em.sig").parent().addClass("text-align-right");
 }
 
+function generate_page_header_footer(path) {
+  // console.log(path);
+  const index_md = "index.md";
+  const signpost_md = "signpost.md";
+
+  if (["/" + app.index, "./" + signpost_md].includes(path)) {
+    return
+  }
+
+  let path_split = path.split("/");
+  if (path_split.slice(-1) == index_md) {
+    // back is last level's index.md
+    path_split.splice(path_split.length - 2, 2);
+    path_split.push(index_md);
+  } else {
+    // back is current index.md
+    path_split[path_split.length - 1] = index_md;
+    console.log(path_split);
+  }
+
+  // 当 path_split 等于 [".", "index.md"]，我们将其跳转到 signpost
+  if (path_split.length == 2 && path_split[path_split.length - 1] == index_md) {
+    path_split[path_split.length - 1] = signpost_md;
+  }
+
+  console.log(path_split);
+
+  let back_url = path_split.join("/").replace("./", "#").replace(".md", "");
+  let edit_url = app.base_url + path.substring(1);
+
+  let back_html = `<a href="${back_url}"><i class="bi bi-reply"></i>go back</a>`;
+  let edit_html = `<a href="${edit_url}" target="_blank"><i class="bi bi-pencil"></i>edit</a>`;
+
+  let page_header = `
+  <div class="page-header">
+    ${back_html}
+    ${edit_html}
+  </div>
+  `;
+  let page_footer = `
+  <div class="page-footer">
+    ${back_html}
+    ${edit_html}
+  </div>
+  `;
+
+  $(".content").prepend(page_header);
+  $(".content").append(page_footer);
+}
+
 // 外部链接视图渲染
 function wrap_external_link() {
   $("a").map(function () {
@@ -437,14 +459,16 @@ function router() {
     wrap_img();
     wrap_blockquote_signature();
     wrap_external_link();
+    generate_page_header_footer(path);
 
     // 完成代码高亮
     $('#content code').map(function () {
       Prism.highlightElement(this);
     });
 
+    // 当前阅读进度
     var perc = app.save_progress ? store.get('page-progress') || 0 : 0;
-    console.log(perc);
+
     if (sectionId) {
       var target = $('#' + decodeURI(sectionId));
       if (target.length == 0) {

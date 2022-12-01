@@ -5,9 +5,6 @@ var CONFIG = {
   // index page
   index: "README.md",
 
-  // sidebar file
-  sidebar_file: "sidebar.md",
-
   // where the docs are actually stored on github - so you can edit
   base_url: "https://github.com/imuxin/cottage/edit/main",
 };
