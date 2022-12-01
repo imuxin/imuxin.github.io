@@ -17,4 +17,4 @@ search sample: **learning * in * days**
 search sample: **understand kubernetes after:2020**
 
 ## Try image search that give you a visual result
-![google image search](images/google-image-search.png)
+![google image search](img/google-image-search.png)

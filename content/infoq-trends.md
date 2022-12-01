@@ -3,24 +3,24 @@
 ## Architecture and Design
 
 ### trends 2022
-![infoq-arch-trends-2022.png](images/infoq-arch-trends-2022.png)
+![infoq-arch-trends-2022.png](img/infoq-arch-trends-2022.png)
 
 ### trends 2021
-![infoq-arch-trends-2021.png](images/infoq-arch-trends-2021.png)
+![infoq-arch-trends-2021.png](img/infoq-arch-trends-2021.png)
 
 ### trends 2020
-![infoq-arch-trends-2020.png](images/infoq-arch-trends-2020.png)
+![infoq-arch-trends-2020.png](img/infoq-arch-trends-2020.png)
 
 ### trends 2019
-![infoq-arch-trends-2019.png](images/infoq-arch-trends-2019.png)
+![infoq-arch-trends-2019.png](img/infoq-arch-trends-2019.png)
 
 ## DevOps
 
 ### trends 2022
-![infoq-devops-trends-2022.png](images/infoq-devops-trends-2022.png)
+![infoq-devops-trends-2022.png](img/infoq-devops-trends-2022.png)
 
 ### trends 2021
-![infoq-devops-trends-2021.png](images/infoq-devops-trends-2021.png)
+![infoq-devops-trends-2021.png](img/infoq-devops-trends-2021.png)
 
 ## References
 
