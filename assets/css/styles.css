@@ -34,6 +34,10 @@ div.page-footer {
   display: flex;
   justify-content: space-between;
 
+  position: absolute;
+  width: 543px;
+  bottom: -10px;
+
   opacity: 50%;
   border-top: 1.5px dashed #3c5872;
   padding-top: 10px;
@@ -133,7 +137,7 @@ body {
 
 .content {
   background: url("../img/textarea_background.png") repeat-y;
-  padding: 1px 269px 1px 120px;
+  padding: 20px 269px 80px 120px;
   min-height: 500px;
   margin: 0;
   position: relative;
