@@ -135,9 +135,12 @@ body {
   margin: 0px;
 }
 
+.content-padding {
+  padding: 20px 269px 80px 120px;
+}
+
 .content {
   background: url("../img/textarea_background.png") repeat-y;
-  padding: 20px 269px 80px 120px;
   min-height: 500px;
   margin: 0;
   position: relative;
@@ -658,10 +661,9 @@ ol.content-toc li a {
 #error {
   display: none;
   position: absolute;
-  left: 480px;
-  top: 200px;
-  height: 17px;
+  top: 250px;
   font-size: 14px;
+  width: 743px;
 }
 
 /* shadow style */
