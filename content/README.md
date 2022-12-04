@@ -33,6 +33,7 @@
 - [How to bootstrap a `istio` 1-13](/content/cloud-native/istio-1-13-bootstrap.md)
 - [All things `Linux containers`](/content/cloud-native/all-things-linux-containers.md)
 - [使用 docker 让容器间共享网络空间](/content/cloud-native/share-network-namespace-in-docker-zh.md)
+- [Istio Ambient Mesh](/content/cloud-native/istio-ambient-mesh.md)
 
 ## Awesome
 
