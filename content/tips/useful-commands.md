@@ -73,3 +73,17 @@ git log --topo-order --oneline --decorate --stat --abbrev-commit origin/release-
 ```
 或者使用github自带的compare功能
 https://github.com/istio/istio/compare/1.12.6...1.13.3
+
+## Sed 系列
+
+删除n到m行
+
+```bash
+sed -i 'n,md' file
+```
+
+在第n行插入
+
+```bash
+sed -i 'n i content' file
+```
