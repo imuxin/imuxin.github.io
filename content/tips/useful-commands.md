@@ -76,14 +76,22 @@ https://github.com/istio/istio/compare/1.12.6...1.13.3
 
 ## Sed 系列
 
-删除n到m行
+删除 {n} 到 {m} 行
 
 ```bash
-sed -i 'n,md' file
+sed -i '{n},{m}d' file
 ```
 
-在第n行插入
+在第 {n} 行插入
 
 ```bash
-sed -i 'n i content' file
+sed -i '{n} i content' file
+```
+
+## Docker 系列
+
+ubuntu zfs 系统下删除容器报错
+
+```bash
+docker ps -a | grep Removal | cut -f1 -d' ' | xargs -rt docker rm  2>&1 >/dev/null | grep "dataset does not exist" |  awk '{print $(NF-4)}' | sed "s/'//g" | cut -f1 -d':' |  xargs -L1 sh -c 'for arg do sudo zfs destroy -R "$arg"; sudo zfs destroy -R "$arg"-init ; sudo zfs create "$arg" ; sudo zfs create "$arg"-init ; ...; done' _ ; docker ps -a | grep Removal | cut -f1 -d' ' | xargs -rt docker rm 2>&1 >/dev/null
 ```
