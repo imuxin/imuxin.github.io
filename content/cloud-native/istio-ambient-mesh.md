@@ -16,11 +16,13 @@ kubectl label namespace { namespace-name } istio.io/dataplane-mode=ambient
 
 ## L4
 
-![l4-traffic]()
+![l4-traffic](./img/ztunnel-overlay.png)
+
+![l4-traffic](./img/mtls_between_ztunnel.png)
 
 ## L7
 
-![l7-raffic]()
+![l7-raffic](./img/ztunnelwaypoint.png)
 
 waypoint ( per app )， waypoint 被攻破只会获取被代理的应用证书信息，而不会影响全部的服务。相较 cilium 的 daemon-set l7 envoy proxy，waypoint 风险更低。
 
@@ -52,9 +54,10 @@ ztunnel inbound -> 15001 port
 
 ## HBONE
 
-![hbone-traffic-overview]()
+![hbone-traffic-overview](./img/HBONEbreakdown.png)
 
 ## References
 
 1. https://youtu.be/nupRBh9Iypo
 2. https://www.zhaohuabing.com/tags/ambient-mesh/
+3. https://www.solo.io/blog/understanding-istio-ambient-ztunnel-and-secure-overlay/

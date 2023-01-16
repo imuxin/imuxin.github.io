@@ -35,7 +35,9 @@
    * [gatsby](https://www.gatsbyjs.com/) [<i class="bi bi-github"></i>](https://github.com/gatsbyjs/gatsby)
    * [nextjs](https://nextjs.org/) [<i class="bi bi-github"></i>](https://github.com/vercel/next.js/)
    * [reactflow](https://reactflow.dev/) [<i class="bi bi-github"></i>](https://github.com/wbkd/react-flow)
+   * [remix]()
 * [vue](https://v3.vuejs.org/)
+   * vite
    * [nuxtjs](https://nuxtjs.org/)
    * [vuetify](https://vuetifyjs.com/)
    * resources
@@ -44,6 +46,22 @@
    * [material design components](https://github.com/PatrickJS/awesome-angular)
    * [awesome-angular](https://github.com/PatrickJS/awesome-angular)
 * [svelte](https://svelte.dev/)
+* [meter](https://github.com/meteor/meteor)
+* [RedwoodJS]()
+* [deno/fresh]()
+
+#### UI
+
+material ui
+fluent ui | fast.design
+semantic ui
+vuetify
+tailwind css
+ant design
+chakra
+react-bootstrap
+blueprintjs
+carbon-ibm
 
 ### boilerplate scaffold
 
