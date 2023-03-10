@@ -332,8 +332,8 @@ function wrap_blockquote_signature() {
   $("blockquote em.sig").parent().addClass("text-align-right");
 }
 
+// 页眉和页尾
 function generate_page_header_footer(path) {
-  // console.log(path);
   const index_md = "README.md";
   const signpost_md = "signpost.md";
 
@@ -349,15 +349,12 @@ function generate_page_header_footer(path) {
   } else {
     // back is current index.md
     path_split[path_split.length - 1] = index_md;
-    console.log(path_split);
   }
 
   // 当 path_split 等于 [".", "index.md"]，我们将其跳转到 signpost
   if (path_split.length == 2 && path_split[path_split.length - 1] == index_md) {
     path_split[path_split.length - 1] = signpost_md;
   }
-
-  console.log(path_split);
 
   let back_url = path_split.join("/").replace("./", "#").replace(".md", "");
   let edit_url = app.base_url + path.substring(1);

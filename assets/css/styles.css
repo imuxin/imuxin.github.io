@@ -191,7 +191,7 @@ body {
 
 .content h1 {
   color: #000000;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 200%;
   font-family: var(--h1-font-family), Sans Serif;
   margin-top: -5px;
@@ -199,7 +199,7 @@ body {
 }
 
 .content h2 {
-  font-weight: bold;
+  font-weight: 500;
   font-family: var(--h2-font-family), "Open Sans", Georgia, Sans Serif;
   font-size: 150%;
   margin: 25px 0px 10px 0px;
@@ -212,7 +212,7 @@ body {
   color: #505050;
   font-family: var(--h3-font-family), Georgia, Sans Serif;
   font-size: 129%;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .content h4 {
