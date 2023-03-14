@@ -7,3 +7,11 @@ function uuidv4() {
   //   (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   // );
 }
+
+function utf8_to_b64(str) {
+  return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+function b64_to_utf8(str) {
+  return decodeURIComponent(escape(window.atob(str)));
+}

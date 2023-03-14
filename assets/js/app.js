@@ -337,7 +337,12 @@ function generate_page_header_footer(path) {
   const index_md = "README.md";
   const signpost_md = "signpost.md";
 
-  if (["/" + app.index, "./" + signpost_md].includes(path)) {
+  if ([
+    "/" + app.index,
+    "./" + signpost_md,
+    "./about/resume.md",
+    "./about/resume-en.md"
+  ].includes(path)) {
     return
   }
 
@@ -441,6 +446,10 @@ function router() {
 
   $.get(path, function (data) {
     $(app.error_id).hide();
+    if (["./about/resume.md", "./about/resume-en.md"].includes(path)) {
+      data = b64_to_utf8(data);
+    }
+
     $(app.content_id).html(marked.parse(data));
 
     if ($(app.content_id + " h1").text() === app.document_title) {
