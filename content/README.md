@@ -37,7 +37,9 @@
 
 ## Awesome
 
-- [500 Lines or Less](https://github.com/aosabook/500lines)
+- [500 Lines or Less](https://github.com/aosabook/500lines).
+- [C++ 性能、工具、库](https://chenshuo.com/data/summit2022.pdf) by chenshuo, [github](https://github.com/chenshuo/muduo), [bilibili](https://space.bilibili.com/1356949475).
+- [Rust Trainings](https://tyrchen.github.io/rust-training/) by Tyr Chen, [github](https://github.com/tyrchen), [bilibili](https://space.bilibili.com/39222989).
 
 ## Others
 
