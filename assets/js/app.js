@@ -495,6 +495,9 @@ function router() {
       }
     }
 
+    // dispatch DOMContentLoaded event to make swimlanes work
+    trigger_DOMContentLoaded();
+
     // wait all resource ready (like image downloading)
     function progressIndicator() {
       var $w = $(window);
@@ -570,4 +573,10 @@ function load_giscus_script() {
   script.setAttribute("async", "");
 
   document.head.appendChild(script);
+}
+
+function trigger_DOMContentLoaded() {
+  var evt = document.createEvent("MutationEvents");
+  evt.initMutationEvent("DOMContentLoaded", true, true, document, "", "", "", 0);
+  document.dispatchEvent(evt);
 }

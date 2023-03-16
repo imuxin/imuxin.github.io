@@ -43,6 +43,7 @@
 
 - [InfoQ trends](/content/infoq-trends.md)
 - [Commands collection](/content/tips/useful-commands.md)
+- [Embed a Swimlanes.io diagram](/content/tips/swimlanes.md)
 
 <div class="grey-margin">
   <p>backups:</p>
