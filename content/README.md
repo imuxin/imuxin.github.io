@@ -9,24 +9,35 @@
 
 ### Language
 
-- [Rust](/content/p/pl/rust/README.md)
-- [Clojure](/content/p/pl/clojure/README.md)
+#### Rust
+
+- [learning roadmap](/content/p/pl/rust-learning-roadmap.md)
+- [common knowledge](/content/p/pl/rust-common-knowledge.md)
+
+#### Go
+
+- [context](/content/p/pl/go-context.md)
+- [channel](/content/p/pl/go-chan.md)
+
+#### Clojure
+
+- [lein setup](/content/p/pl/clojure-lein-setup.md)
 
 ### Design Pattern
 
-- [index](/content/p/dp/README.md)
+- [todo](/todo.md)
 
 ### Algorithm
 
-- [index](/content/p/a/README.md)
+- [todo](/todo.md)
 
 ## Operating system
 
-- [index](/content/os/README.md)
+- [use rust to write kernel module](/todo.md)
 
 ## Cloud Native
 
-- [Kubernetes 分析系列](/content/cloud-native/k8s/README.md)
+- [k8s - informer](/content/cloud-native/k8s-001-informer.md)
 - [Service Mesh 分析系列](/todo.md)
 - [istio release 分析](/content/cloud-native/istio-release-analysis.md)
 - [How to bootstrap a `kubernetes` by using `k0s`](/content/cloud-native/k0s-bootstrap.md)
