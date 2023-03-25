@@ -16,60 +16,6 @@ var app = {
 };
 
 /**
- * common functions
- */
-
-function max(array) {
-  var temp = array[0];
-  array.slice(1).forEach(function (ele) {
-    if (ele > temp) {
-      temp = ele;
-    }
-  });
-  return temp;
-}
-
-function min(array) {
-  var temp = array[0];
-  array.slice(1).forEach(function (ele) {
-    if (ele < temp) {
-      temp = ele;
-    }
-  });
-  return temp;
-}
-
-function lessThan(array, sth) {
-  var temp = [];
-  array.forEach(function (ele) {
-    if (ele < sth) {
-      temp.push(ele);
-    }
-  });
-  return temp;
-}
-
-function greaterThan(array, sth) {
-  var temp = [];
-  array.forEach(function (ele) {
-    if (ele > sth) {
-      temp.push(ele);
-    }
-  });
-  return temp;
-}
-
-function toTitleCase(s) {
-  return s.replace(/\w[^\s-]*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-}
-
-function capitalize(s) {
-  return s[0].toUpperCase() + s.slice(1);
-}
-
-/**
 * 获取当前hash
 *
 * @param {string} hash 要解析的hash，默认取当前页面的hash，如： nav#类目 => {nav:nav, anchor:类目}
@@ -92,12 +38,6 @@ var getHash = function (hash) {
     anchor: decodeURIComponent(hash[1] || '')
   }
 };
-
-function initialize() {
-  // page router
-  router();
-  $(window).on('hashchange', router);
-}
 
 function goTop(e) {
   if (e) e.preventDefault();
@@ -412,94 +352,13 @@ function show_loading() {
   return loading;
 }
 
-function router() {
-  var path = location.hash.replace(/#([^#]*)(#.*)?/, './$1');
-  var hashArr = location.hash.split('#');
-  var sectionId;
-  if (hashArr.length > 2 && !(/^comment-/.test(hashArr[2]))) {
-    sectionId = hashArr[2];
-  }
-
-  if (app.save_progress && store.get('menu-progress') !== location.hash) {
-    store.set('menu-progress', location.hash);
-    store.set('page-progress', 0);
-  }
-
-  // default page if hash is empty
-  if (location.pathname === "/index.html") {
-    path = location.pathname.replace("index.html", app.index);
-    location.replace(location.href.split("/index.html")[0])
-    return
-  } else if (path === "") {
-    path = location.pathname + app.index;
-    normalize_paths();
-  } else {
-    path = path + ".md";
-  }
-
-  // 取消scroll事件的监听函数
-  // 防止改变下面的变量perc的值
-  $(window).off('scroll');
-
-  // otherwise get the markdown and render it
-  var loading = show_loading();
-
-  $.get(path, function (data) {
-    $(app.error_id).hide();
-    if (["./about/resume.md", "./about/resume-en.md"].includes(path)) {
-      data = b64_to_utf8(data);
-    }
-
-    $(app.content_id).html(marked.parse(data));
-
-    if ($(app.content_id + " h1").text() === app.document_title) {
-      document.title = app.document_title;
-    } else {
-      document.title = $(app.content_id + " h1").text() + " - " + app.document_title;
-    }
-    normalize_paths();
-    native_jump(); // must before create_page_anchors function
-    create_page_anchors();
-    wrap_table();
-    wrap_pre();
-    wrap_img();
-    wrap_blockquote_signature();
-    wrap_external_link();
-    generate_page_header_footer(path);
-
-    // 完成代码高亮
-    $('#content code').map(function () {
-      Prism.highlightElement(this);
-    });
-
-    // 当前阅读进度
-    var perc = app.save_progress ? store.get('page-progress') || 0 : 0;
-
-    if (sectionId) {
-      var target = $('#' + decodeURI(sectionId));
-      if (target.length == 0) {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 300);
-      } else {
-        $('html, body').animate({
-          scrollTop: (target.offset().top)
-        }, 300);
-      }
-
-    } else {
-      if (location.hash !== '' && perc >= 0) {
-        $('html, body').animate({
-          scrollTop: ($('body').height() - $(window).height()) * perc
-        }, 200);
-      }
-    }
-
-    // dispatch DOMContentLoaded event to make swimlanes work
-    trigger_DOMContentLoaded();
-
-    // wait all resource ready (like image downloading)
-    function progressIndicator() {
+function initialize() {
+  // page router
+  router();
+  $(window).on('hashchange', router);
+  $(document).ready(function () {
+    /* 监听 document.body 的高度变化来渲染进度条 */
+    const observer = new ResizeObserver(() => {
       var $w = $(window);
       var $prog2 = $('.progress-indicator-2');
       var wh = $w.height();
@@ -516,30 +375,10 @@ function router() {
         $prog2.css({ width: perc * 100 + '%' });
         app.save_progress && store.set('page-progress', perc);
       }
-    }
-    (function () {
-      // When we begin, assume no images are loaded.
-      var imagesLoaded = 0
-      // Count the total number of images on the page when the page has loaded.
-      var totalImages = $("img").length
-      if (totalImages === 0) {
-        progressIndicator();
-      }
-      $("img").on("load", function (event) {
-        imagesLoaded++
-        if (imagesLoaded == totalImages) {
-          progressIndicator();
-        }
-      });
-    })();
-  }).fail(function () {
-    show_error();
-  }).always(function () {
-    clearInterval(loading);
-    $(app.loading_id).hide();
-    enable_code_clipboard();
-    load_giscus_script();
-  });
+    });
+    // start observing a DOM node
+    observer.observe(document.body);
+  })
 }
 
 function enable_code_clipboard() {
@@ -579,4 +418,101 @@ function trigger_DOMContentLoaded() {
   var evt = document.createEvent("MutationEvents");
   evt.initMutationEvent("DOMContentLoaded", true, true, document, "", "", "", 0);
   document.dispatchEvent(evt);
+}
+
+function router() {
+  var path = location.hash.replace(/#([^#]*)(#.*)?/, './$1');
+  var hashArr = location.hash.split('#');
+  var sectionId;
+  if (hashArr.length > 2 && !(/^comment-/.test(hashArr[2]))) {
+    sectionId = hashArr[2];
+  }
+
+  if (app.save_progress && store.get('menu-progress') !== location.hash) {
+    store.set('menu-progress', location.hash);
+    store.set('page-progress', 0);
+  }
+
+  // default page if hash is empty
+  if (location.pathname === "/index.html") {
+    path = location.pathname.replace("index.html", app.index);
+    location.replace(location.href.split("/index.html")[0])
+    return
+  } else if (path === "") {
+    path = location.pathname + app.index;
+    normalize_paths();
+  } else {
+    path = path + ".md";
+  }
+
+  // 取消scroll事件的监听函数
+  // 防止改变下面的变量perc的值
+  $(window).off('scroll');
+
+  // otherwise get the markdown and render it
+  var loading = show_loading();
+
+  $.get(path, function (data) {
+    $(app.error_id).hide();
+    if (["./about/resume.md", "./about/resume-en.md"].includes(path)) {
+      data = b64_to_utf8(data);
+    }
+
+    // render markdown text to html
+    $(app.content_id).html(marked.parse(data));
+
+    if ($(app.content_id + " h1").text() === app.document_title) {
+      document.title = app.document_title;
+    } else {
+      document.title = $(app.content_id + " h1").text() + " - " + app.document_title;
+    }
+
+    normalize_paths();
+    native_jump(); // must before create_page_anchors function
+    create_page_anchors();
+    wrap_table();
+    wrap_pre();
+    wrap_img();
+    wrap_blockquote_signature();
+    wrap_external_link();
+    generate_page_header_footer(path);
+
+    // 完成代码高亮
+    $('#content code').map(function () {
+      Prism.highlightElement(this);
+    });
+
+    // 当前阅读进度
+    {
+      var perc = app.save_progress ? store.get('page-progress') || 0 : 0;
+      if (sectionId) {
+        var target = $('#' + decodeURI(sectionId));
+        if (target.length == 0) {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 300);
+        } else {
+          $('html, body').animate({
+            scrollTop: (target.offset().top)
+          }, 300);
+        }
+      } else {
+        if (location.hash !== '' && perc >= 0) {
+          $('html, body').animate({
+            scrollTop: ($('body').height() - $(window).height()) * perc
+          }, 200);
+        }
+      }
+    }
+
+    // dispatch DOMContentLoaded event to make swimlanes work
+    trigger_DOMContentLoaded();
+  }).fail(function () {
+    show_error();
+  }).always(function () {
+    clearInterval(loading);
+    $(app.loading_id).hide();
+    enable_code_clipboard();
+    load_giscus_script();
+  });
 }
