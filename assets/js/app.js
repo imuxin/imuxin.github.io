@@ -9,7 +9,7 @@ var app = {
   error_id: "#error",
 
   // display elements
-  save_progress: true, // 保存阅读进度
+  save_progress: false, // 保存阅读进度
 
   // initialize function
   run: initialize
@@ -352,28 +352,6 @@ function show_loading() {
   return loading;
 }
 
-function initialize() {
-  // page router
-  router();
-  $(window).on('hashchange', router);
-  $(document).ready(function () {
-    /* 监听 document.body 的高度变化来渲染进度条 */
-    const observer = new ResizeObserver(() => {
-      var $w = $(window);
-      var $prog2 = $('.progress-indicator-2');
-      var wh = $w.height();
-      var h = $('body').height();
-      var sHeight = h - wh;
-      window.requestAnimationFrame(function () {
-        var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
-        $prog2.css({ width: perc * 100 + '%' });
-      });
-    });
-    // start observing a DOM node
-    observer.observe(document.body);
-  })
-}
-
 function enable_code_clipboard() {
   $("div.menu-button.clipboard").click(function (e) {
     let code = $(e.currentTarget).next().text();
@@ -475,6 +453,9 @@ function router() {
       Prism.highlightElement(this);
     });
 
+    // dispatch DOMContentLoaded event to make swimlanes work
+    trigger_DOMContentLoaded();
+
     // 当前阅读进度
     {
       var perc = app.save_progress ? store.get('page-progress') || 0 : 0;
@@ -500,13 +481,10 @@ function router() {
 
     // watch scroll
     {
-      var $w = $(window);
-      $w.on('scroll', function () {
-        var wh = $w.height();
-        var h = $('body').height();
-        var sHeight = h - wh;
+      $(window).on('scroll', function () {
         window.requestAnimationFrame(function () {
-          var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
+          var sHeight = $('body').height() - $(window).height();
+          var perc = Math.max(0, Math.min(1, $(window).scrollTop() / sHeight));
           updateProgress(perc);
         });
       });
@@ -517,9 +495,6 @@ function router() {
         app.save_progress && store.set('page-progress', perc);
       }
     }
-
-    // dispatch DOMContentLoaded event to make swimlanes work
-    trigger_DOMContentLoaded();
   }).fail(function () {
     show_error();
   }).always(function () {
@@ -528,4 +503,10 @@ function router() {
     enable_code_clipboard();
     load_giscus_script();
   });
+}
+
+function initialize() {
+  // page router
+  router();
+  $(window).on('hashchange', router);
 }
