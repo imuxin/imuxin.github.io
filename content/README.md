@@ -41,6 +41,7 @@
 - [Service Mesh 分析系列](/todo.md)
 - [istio release 分析](/content/cloud-native/istio-release-analysis.md)
 - [How to bootstrap a `kubernetes` by using `k0s`](/content/cloud-native/k0s-bootstrap.md)
+- [`k0s` bootstrap in ubuntu](/content/cloud-native/k0s-v1.26.3%2Bk0s.0-bootstrap.md)
 - [How to bootstrap a `istio` 1-13](/content/cloud-native/istio-1-13-bootstrap.md)
 - [All things `Linux containers`](/content/cloud-native/all-things-linux-containers.md)
 - [使用 docker 让容器间共享网络空间](/content/cloud-native/share-network-namespace-in-docker-zh.md)
