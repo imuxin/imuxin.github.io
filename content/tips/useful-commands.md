@@ -95,3 +95,17 @@ ubuntu zfs 系统下删除容器报错
 ```bash
 docker ps -a | grep Removal | cut -f1 -d' ' | xargs -rt docker rm  2>&1 >/dev/null | grep "dataset does not exist" |  awk '{print $(NF-4)}' | sed "s/'//g" | cut -f1 -d':' |  xargs -L1 sh -c 'for arg do sudo zfs destroy -R "$arg"; sudo zfs destroy -R "$arg"-init ; sudo zfs create "$arg" ; sudo zfs create "$arg"-init ; ...; done' _ ; docker ps -a | grep Removal | cut -f1 -d' ' | xargs -rt docker rm 2>&1 >/dev/null
 ```
+## openssl 生成自签证书
+
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 # 生成 RootCA Key: key.pem
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=CN/ST=Jiangsu/L=Nanjing/O=fn-matrix/OU=IT/CN=rootca.imuxin.org" # 生成 RootCA Cert: cert.pem
+
+openssl genrsa -out tls.key 4096 # 生成私钥: tls.key
+
+openssl rsa -in tls.key -pubout > tls.pub # 生成公钥: tls.pub
+
+openssl req -new -key tls.key -out tls.csr -subj "/C=CN/ST=Jiangsu/L=Nanjing/O=fn-matrix/OU=IT/CN=*.example.org" # 生成 csr: tls.csr
+
+openssl x509 -req -in tls.csr -CA cert.pem -CAkey key.pem -out tls.crt -days 365 -sha256 -CAcreateserial -CAserial cert.seq # 生成证书: tls.crt
+```
