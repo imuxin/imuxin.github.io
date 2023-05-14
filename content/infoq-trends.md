@@ -2,6 +2,9 @@
 
 ## Architecture and Design
 
+### trends 2023
+![infoq-arch-trends-2023.png](img/infoq-arch-trends-2023.png)
+
 ### trends 2022
 ![infoq-arch-trends-2022.png](img/infoq-arch-trends-2022.png)
 
@@ -24,6 +27,7 @@
 
 ## References
 
+1. [Software Architecture and Design InfoQ Trends Report—April 2023](https://www.infoq.com/articles/architecture-trends-2023/)
 1. [Software Architecture and Design InfoQ Trends Report—April 2022](https://www.infoq.com/articles/architecture-trends-2022/)
 1. [Software Architecture and Design InfoQ Trends Report—April 2021](https://www.infoq.com/articles/architecture-trends-2021/)
 1. [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/)
