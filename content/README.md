@@ -29,7 +29,7 @@
 
 ### Algorithm
 
-- [todo](/todo.md)
+- [Raft](/content/p/alg/raft.md)
 
 ## Operating system
 
