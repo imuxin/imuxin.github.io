@@ -276,10 +276,12 @@ function wrap_blockquote_signature() {
 function generate_page_header_footer(path) {
   const index_md = "README.md";
   const signpost_md = "signpost.md";
+  const archive_md = "archive.md"
 
   if ([
     "/" + app.index,
     "./" + signpost_md,
+    "./" + archive_md,
     "./about/resume.md",
     "./about/resume-en.md"
   ].includes(path)) {
