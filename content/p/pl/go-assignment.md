@@ -25,7 +25,7 @@ Assignment of most types is copy-as-value like basic `integer`, `boolean` and `s
 
 <blockquote class="tip">
 <p class="title">小提示（个人经验之谈，如有出错，敬请告知）</p>
-当一个变量可以和 `nil` 做 boolean 比较时，则可以认为这个变量是 copy-as-pointer 的，否则是 copy-as-value。那怎么判断变量能否和 nil 做比较呢？有个比较简单的方法是写个条件判断，编译器不报错表示能和 nil 做比较。举例来说，现有个变量 `var m map[string]string`, 添加一行 nil 比较 `_ = (m == nil)`，结果发现编译器不报错，则任务变量 m 是 copy-as-pointer 类型。
+当一个变量可以和 `nil` 做 boolean 比较时，则可以认为这个变量是 copy-as-pointer 的，否则是 copy-as-value。那怎么判断变量能否和 nil 做比较呢？有个比较简单的方法是写个条件判断，编译器不报错表示能和 nil 做比较。举例来说，现有个变量 `var m map[string]string`, 添加一行 nil 比较 `_ = (m == nil)`，结果发现编译器不报错，则认为变量 m 是 copy-as-pointer 类型。
 </blockquote>
 
 以下是一个验证示例程序，仅供参考。

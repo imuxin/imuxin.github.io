@@ -1,11 +1,11 @@
 :root {
   /* font */
-  --h1-font-family: "Comfortaa";
-  --h2-font-family: "Comfortaa";
-  --h3-font-family: "Inconsolata";
-  --body-font-family: "Inconsolata";
-  --grey-margin-font-family: "Inconsolata";
-  --quotes-font-family: "Blockquotes";
+  --h1-font-family: 'Comfortaa', 'Noto Sans SC';
+  --h2-font-family: 'Comfortaa', 'Noto Sans SC';
+  --h3-font-family: 'Inconsolata', 'Noto Sans SC';
+  --body-font-family: 'Inconsolata', 'Noto Sans SC';
+  --grey-margin-font-family: 'Inconsolata', 'Noto Sans SC';
+  --quotes-font-family: "Blockquotes", 'Noto Sans SC';
 
   /* color */
   --color-border-muted: hsla(210, 18%, 87%, 1);
