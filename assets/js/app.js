@@ -192,7 +192,7 @@ function create_page_anchors() {
         '#' +
         replace_symbols(add_prefix(index, content)) +
         '" class="section-link">§</a> <a href="#' +
-        location.hash.split('#')[1] + '" onclick="goTop()">⇧</a>');
+        location.hash.split('#')[1] + '" onclick="goTop()">🔝</a>');
     }, function () {
       $(this).html(content);
     });

@@ -14,14 +14,15 @@
   color: #fff;
   background: #2f4858;
   border-radius: 4px;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, "Courier New",
+    Courier, FreeMono, monospace;
 }
 
 #content code {
   /* color: white; */
   color: #dcdcdc;
   font-weight: normal;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, "Courier New",
-    Courier, FreeMono, monospace;
+  font-family: inherit;
   background: #2f4858;
   border-radius: 4px;
 }

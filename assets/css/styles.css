@@ -200,20 +200,26 @@ body {
 }
 
 .content h2 {
+  line-height: 24px;
   font-weight: 500;
   font-family: var(--h2-font-family), "Open Sans", Georgia, Sans Serif;
   font-size: 150%;
-  margin: 25px 0px 10px 0px;
+  margin: 15px 0px 10px 0px;
   color: #3c3c3c;
+  padding-top: 10px;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid var(--color-border-muted)
+  border-bottom: 1px solid var(--color-border-muted);
 }
 
 .content h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
   color: #505050;
   font-family: var(--h3-font-family), Georgia, Sans Serif;
+  font-style: italic;
   font-size: 129%;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .content h4 {
