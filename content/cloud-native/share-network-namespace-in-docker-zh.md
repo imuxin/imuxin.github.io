@@ -1,6 +1,6 @@
 # 如何在 docker 里容器间共享网络空间
 
-## Why
+## Background
 
 当我们需要在运行的容器里抓包，按照以往的方式是在该容器里安装一些调试的软件，或者使用系统提供 `nsenter` 程序来进入容器的网络空间，从而使用宿主机的抓包软件。无论是安装软件还是使用 `nsenter` （宿主机上安装软件），都需要我们在环境里安装好调试软件。其实在 **kubernetes** 里，`kubectl` 提供了 debug 命令来给 **Pod** 注入一个 ephemeral container，这样 ephemeral container 就和我们要调试的目标容器在一个 Pod 里了（我们知道 [pod 里的容器之间的网络就是共享的](https://kubernetes.io/docs/concepts/workloads/pods/#how-pods-manage-multiple-containers)。所以我们可以用一个集成了网络调试工具的镜像来启动这个 ephemeral contrainer，从而我们就有了网络调试的环境了，这样我们就不需要单独安装各种软件了。
 

@@ -901,6 +901,14 @@ div.pre-container:hover .clipboard button {
   opacity: 1;
 }
 
+div.pre-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid white;
+  top: 26px;
+}
+
 .text-align-right {
   text-align: right !important;
 }

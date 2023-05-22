@@ -3,7 +3,7 @@
 ## 2023
 
 - [ ] 2023/\*/\* [](/todo.md)
-- [ ] 2023/05/22 [Go defer panic 和 recover](/content/p/pl/go-defer-panic-recover.md)
+- [x] 2023/05/22 [Go defer panic 和 recover](/content/p/pl/go-defer-panic-recover.md)
 - [ ] 2023/\*/\* [Go CMD](/todo.md) `go`
 - [ ] 2023/\*/\* [Zero Copy](/todo.md)
 - [ ] 2023/\*/\* [Go - Plan 9](/todo.md)
