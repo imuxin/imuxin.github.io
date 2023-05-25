@@ -8,10 +8,10 @@ div.center {
 
 div.flex-center {
   display: flex;
-  justify-content: center;
   /* 水平居中 */
-  align-items: center;
+  justify-content: center;
   /* 垂直居中 */
+  align-items: center;
 }
 
 div.page-header {
@@ -244,7 +244,7 @@ body {
 }
 
 .content p {
-  line-height: 1.2em;
+  line-height: 1.5em;
 }
 
 /****** Quote style *****
@@ -286,7 +286,9 @@ blockquote.warning {
 }
 
 blockquote>p.title {
-  font-size: 120%;
+  display: inline-flex;
+  align-items: center;
+  font-size: 100%;
   font-weight: 600;
 }
 
@@ -297,7 +299,7 @@ blockquote>p.title::before {
 }
 
 blockquote.important>p.title::before {
-  content: "\f26a";
+  content: "\f332";
 }
 
 blockquote.tip>p.title::before {

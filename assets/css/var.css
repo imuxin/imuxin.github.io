@@ -5,7 +5,8 @@
   --h3-font-family: 'Inconsolata', 'Noto Sans SC';
   --body-font-family: 'Inconsolata', 'Noto Sans SC';
   --grey-margin-font-family: 'Inconsolata', 'Noto Sans SC';
-  --quotes-font-family: "Blockquotes", 'Noto Sans SC';
+  --quotes-font-family: 'Averia Gruesa Libre', 'Noto Sans SC';
+  --code-font-family: 'JetBrains Mono', monospace;
 
   /* color */
   --color-border-muted: hsla(210, 18%, 87%, 1);
