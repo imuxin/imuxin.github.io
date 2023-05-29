@@ -58,6 +58,9 @@ Program was like a box of chocolates, you never know what you're gonna get.
     <li><a href="https://ludwig.guru/">ludwig.guru</a></li>
     <li><a href="https://youglish.com/">youglish.com</a></li>
     <li><a href="https://www.deepl.com/translator">deepl</a></li>
+    <li><a href="https://imuxin.github.io/json_sort/">json_sort</a></li>
+    <li><a href="https://structurizr.com/dsl">structurizr</a></li>
+    <li><a href="https://d2lang.com/">D2: Declarative Diagramming</a></li>
   </ul>
   <p>⭐️ Collect</p>
   <ul>
