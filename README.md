@@ -11,7 +11,7 @@ Pensieve, quoting [here](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_
 ## Repositories
 
 - [kubectl-watch](https://github.com/imuxin/kubectl-watch), another watch tool with visualization view of delta change for kubernetes resources.
-- [kube-sql](https://github.com/imuxin/kube-sql), sql for kubernetes. (is still under heavy development)
+- [ksql](https://github.com/imuxin/ksql), sql for kubernetes.
 
 ## About me
 
