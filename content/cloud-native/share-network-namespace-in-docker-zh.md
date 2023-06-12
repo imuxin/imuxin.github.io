@@ -30,6 +30,12 @@ services:
     network_mode: service:nginx
 ```
 
+## 补充，在 kubernetes 里使用 netshoot
+
+```bash
+kubectl debug -n {POD_NAMESPACE} -it --image=docker.io/nicolaka/netshoot:latest -c debugger {POD_NAME}
+```
+
 ## References
 
 1. [Sharing Network Namespaces in Docker](https://blog.mikesir87.io/2019/03/sharing-network-namespaces-in-docker/)
