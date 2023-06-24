@@ -36,3 +36,9 @@ github: https://github.com/WerWolv/ImHex
 
 ### tldraw
 
+### mousepose
+
+Highlight your mouse pointer and cursor position
+
+official: https://boinx.com/mousepose/
+

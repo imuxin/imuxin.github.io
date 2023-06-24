@@ -14,31 +14,17 @@
 
 4. Install `vim` `tar` `bash-completion` tools.
 
-   exec `yum install vim tar bash-completion -y`
+   exec `sudo apt install vim tar bash-completion -y`
 
 
 ## Configure
 
-### Step1: Command auto completion
-
-   Copy the following script and append to ~/.bashrc file.
-   ```bash
-   # k0s auto-completion
-   source <(k0s completion bash)
-
-   # kubectl auto-completion
-   export KUBECONFIG=~/.kube/config
-   source <(kubectl completion bash)
-   alias k=kubectl
-   complete -F __start_kubectl k
-   ```
-
-### Step2: Move exec files to $PATH folder.
+### Step1: Move exec files to $PATH folder.
 
    ```bash
    # handle airgap image file
    sudo mkdir -p /var/lib/k0s/images/
-   sudo cp k0s-airgap-bundle-v1.26.3+k0s.0-amd64 /var/lib/k0s/images/bundle_file
+   sudo cp k0s-airgap-bundle-v1.26.3+k0s.0-amd64.tar /var/lib/k0s/images/bundle_file
 
    sudo mv k0s-v1.26.3+k0s.0-amd64 /usr/bin/k0s
    sudo mv kubectl /usr/local/bin/
@@ -47,11 +33,33 @@
    sudo chmod +x /usr/bin/k0s
    ```
 
-### Step3: Config nerdctl.toml
+### Step2: Command auto completion
+
+   Copy the following script and append to ~/.bashrc file.
 
    ```bash
-   mkdir -p /etc/nerdctl/ && \
-   tee /etc/nerdctl/nerdctl.toml <<EOF
+   # k0s auto-completion
+   source <(sudo k0s completion bash)
+
+   # kubectl auto-completion
+   export KUBECONFIG=~/.kube/config
+   source <(kubectl completion bash)
+   alias k=kubectl
+   complete -F __start_kubectl k
+
+   alias nerdctl="sudo nerdctl"
+   alias k0s="sudo k0s"
+   ```
+
+   Activate ".bashrc" by execute `. ~/.bashrc`
+
+### Step3: Config nerdctl.toml
+
+   Download nerdctl binary from github:[containerd/nerdctl](https://github.com/containerd/nerdctl/releases).
+
+   ```bash
+   sudo mkdir -p /etc/nerdctl/ && \
+   sudo tee /etc/nerdctl/nerdctl.toml <<EOF
    debug          = false
    debug_full     = false
    address        = "unix:///run/k0s/containerd.sock"
@@ -60,13 +68,13 @@
    EOF
    ```
 
-## Start k0s
+## Start master
 
 use `sudo k0s config create` to output default config.
 
 ```bash
 # install k0s controller
-sudo k0s install controller -c k0s.yaml --enable-worker --single
+sudo k0s install controller -c k0s.yaml --enable-worker
 
 # start service
 sudo k0s start
@@ -78,6 +86,14 @@ After k0s started, generate kubeconfig into ~/.kube/config
 # export kube config
 mkdir ~/.kube
 sudo k0s kubeconfig admin > ~/.kube/config
+```
+
+## Start a worker node
+
+```
+sudo k0s token create --role=worker > token-file
+sudo k0s install worker --token-file /path/to/token/file
+sudo k0s start
 ```
 
 ## Verify
