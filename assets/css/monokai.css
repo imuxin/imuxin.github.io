@@ -73,6 +73,7 @@ code[class*="language-"] {
   color: #ab9df2;
 }
 
+.token.deleted,
 .token.selector,
 .token.attr-name,
 .token.string,
@@ -94,6 +95,7 @@ code[class*="language-"] {
   color: #e6db74;
 }
 
+.token.inserted,
 .token.keyword {
   color: #a9dc76;
 }
