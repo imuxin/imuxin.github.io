@@ -93,9 +93,9 @@ Route 的设计目标是给懂业务应用的那群开发者使用的。且以�
 
 ### istio
 
-站在流量治理的角度上看，Gateway API 和 Istio API 有很多相似的设计，比如 `Gateway` 和 `VirtualService` Gateway API 作为一个中立的 API 标准，从很多 Ingress 项目吸取了很多经验，其中就包括 Istio 的 API 设计。下面将介绍 Kubernetes Gateway API 和 Istio API 的不同点。
+站在流量治理的角度上看，Gateway API 和 Istio API 有很多相似的设计，比如 `Gateway` 和 `VirtualService`。 Gateway API 作为一个中立的 API 标准，吸取了很多开源网关的经验，其中就包括 Istio 的 API 设计。下面罗列了 Gateway API 和 Istio API 的几个不同点。
 
-1. Istio `Gateway` 资源仅对已经部署的网关负载(Deployment/Service)配置；而在 Gateway API 中， `Gateway` 设计中还包括对网关进行**部署**。
+1. Istio `Gateway` 资源仅对已经部署的网关负载(Deployment/Service)进行配置；而在 Gateway API 中， `Gateway` 设计中还包括对网关进行**部署**。
 2. Istio `VirtualService` 可以将不同协议的流量配置在同一个文件中；而在 Gateway API 中，不同的协议都有自己的资源，比如 `HTTPRoute` `GRPCRoute` `TCPRoute` 等。
 3. 尽管 Gateway API 很多丰富的路由等流量治理功能，但至今仍未 100% 覆盖 istio 的特性。Istio 正在努力扩展 Gateway API 来更好的公开 istio 的功能。毕竟 Istio 未来是要将 Gateway API 作为其流量治理的[默认 API](https://istio.io/latest/blog/2022/gateway-api-beta/) 的。
 
@@ -121,7 +121,7 @@ kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
 
 ![sample overview](./img/gateway-api-sample-app.excalidraw.png)
 
-(Note): Istiod 会默认创建一个 `GatewayClass`，YAML 描述文件如下：
+【Note】Istiod 会默认创建一个 `GatewayClass`，YAML 描述文件如下：
 
 ```yaml
 apiVersion: gateway.networking.k8s.io/v1beta1
@@ -141,13 +141,13 @@ status:
     type: Accepted
 ```
 
-step1): 部署一个测试应用服务 httpbin
+【step1】部署一个测试应用服务 httpbin。
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/istio/istio/release-1.18/samples/httpbin/httpbin.yaml | kubectl apply -f -
 ```
 
-step2): 使用 Gateway API `Gateway` 创建一个网关，以及声明网关监听的端口信息
+【step2】使用 Gateway API `Gateway` 创建一个网关，以及声明网关监听的端口信息。
 
 ```bash
 kubectl create namespace istio-ingress
@@ -170,7 +170,7 @@ spec:
 EOF
 ```
 
-(verify): 检查自动创建的网关负载和 Service。
+【verify】检查自动创建的网关负载和 Service。
 
 > 不想使用自动创建的网关，请参考[下文](#content/cloud-native/k8s-gateway-api#manual-deployment)来关联手动创建的网关。
 
@@ -196,7 +196,7 @@ gateway-istio-5f557d485d-btgnp   1/1     Running   2 (30h ago)   45h
 | service            | `<gateway name>-<gateway class name>` | {namespace} | LoadBalancer | istio.io/gateway-name: `<gateway name>`             |
 | gateway (istio)    | -                                     | -           |              |                                                     |
 
-step3): 给服务配置路由。
+【step3】给服务配置路由。
 
 ```bash
 kubectl apply -f - <<EOF
@@ -221,7 +221,7 @@ spec:
 EOF
 ```
 
-(verify): 验证 Gateway API。
+【verify】验证 Gateway API。
 
 > 由于笔者的 Kubernetes 集群不支持 LoadBalancer，这里使用网关的 Service 地址来访问。
 
