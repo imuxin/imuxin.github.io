@@ -3,6 +3,7 @@
 ## 2023
 
 - [ ] 2023/\*/\* [](/todo.md)
+- [x] 2023/07/03 [K0S dual stack](/content/cloud-native/k0s-dual-stack.md)
 - [x] 2023/06/29 [A brief guide to Gateway API](/content/cloud-native/k8s-gateway-api.md) `istio` `gateway api`
 - [x] 2023/05/22 [Go defer panic 和 recover](/content/p/pl/go-defer-panic-recover.md)
 - [ ] 2023/\*/\* [Go CMD](/todo.md) `go`
