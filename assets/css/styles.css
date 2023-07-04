@@ -206,14 +206,14 @@ body {
   font-size: 150%;
   margin: 15px 0px 10px 0px;
   color: #3c3c3c;
-  padding-top: 10px;
+  padding-top: 1em;
   padding-bottom: 0.3em;
   border-bottom: 1px solid var(--color-border-muted);
 }
 
 .content h3 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 1em;
+  padding-bottom: 0.3em;
   line-height: 20px;
   color: #505050;
   font-family: var(--h3-font-family), Georgia, Sans Serif;
@@ -223,7 +223,7 @@ body {
 }
 
 .content h4 {
-  font-size: 107%;
+  font-size: 118%;
   text-decoration: underline;
 }
 
