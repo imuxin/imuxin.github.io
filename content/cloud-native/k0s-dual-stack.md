@@ -1,6 +1,6 @@
 # K0S Support Dual Stack Network
 
-在上一篇 [k0s bootstrap in ubuntu](k0s-v1.26.3+k0s.0-bootstrap.md) 中，我们已经掌握了如何用 k0s 部署一个 kubernetes 集群。本文将继续探索 CNI 之双栈网络架构。
+在上一篇 [k0s bootstrap in ubuntu](../tips/keywords.md) 中，我们已经掌握了如何用 k0s 部署一个 kubernetes 集群。本文将继续探索 CNI 之双栈网络架构。
 
 > Note: k0s 中的双栈网络的部署需要使用 Calico CNI 或者自定义 CNI。
 
