@@ -1,10 +1,10 @@
 # K0S Support Dual Stack Network
 
-在上一篇 [k0s bootstrap in ubuntu](/content/cloud-native/k0s-v1.26.3+k0s.0-bootstrap.md) 中，我们已经掌握了如何用 k0s 部署一个 kubernetes 集群。本文将继续探索 CNI 之双栈网络架构。
+在上一篇 [k0s bootstrap in ubuntu](k0s-v1.26.3+k0s.0-bootstrap.md) 中，我们已经掌握了如何用 k0s 部署一个 kubernetes 集群。本文将继续探索 CNI 之双栈网络架构。
 
 > Note: k0s 中的双栈网络的部署需要使用 Calico CNI 或者自定义 CNI。
 
-### 双栈配置
+## 双栈配置
 
 将 k0s.yaml 的网络配置做以下变更以支持双栈网络。该变更将网络提供者设置为 `calico` 且使用 `bird` 模式。
 
@@ -28,7 +28,7 @@
 
 待更新好 k0s.yaml 后，我们启动集群。
 
-### Troubleshooting
+## Troubleshooting
 
 在运行 `k0s start` 之后，我的环境里 `calico-node` daemonset 没有成功运行。查看容器日志，发现有以下异常：
 
