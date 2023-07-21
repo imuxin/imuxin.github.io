@@ -110,9 +110,10 @@ fn main() {
 > Syntax
 > ErrorPropagationExpression :
 >    Expression ?
+> ```
 >    
 > The question mark operator (?) unwraps valid values or returns erroneous values, propagating them to the calling function. It is a unary postfix operator that can only be applied to the types Result<T, E> and Option<T>.
-> ```
+
 
 正如 Rust 对 `?` 操作符解释的那样，对 Result 进行展开，若 `Result` 是 **Err** 则直接返回，否则将 `Result` 的正确结果赋值给变量。这样就有了一个隐含的约束：使用 `?` 操作符的函数的返回值必须是 `Result` 类型。
 
@@ -124,7 +125,7 @@ fn main() -> std::io::Result&#x3C;()> {
 }
 </code></pre>
 
-下面给出了 ? 操作符的等价代码来解释：
+下面给出了 `?` 操作符的等价代码来解释：
 
 <pre class="language-rust"><code class="lang-rust">use std::fs::File;
 
