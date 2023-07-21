@@ -33,7 +33,8 @@
   background: inherit;
 }
 
-code[class*="language-"] {
+code[class*="language-"],
+code[class*="language-"] strong {
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -44,6 +45,13 @@ code[class*="language-"] {
   font-family: var(--code-font-family);
   font-weight: normal;
   font-size: 12px;
+}
+
+code[class*="language-"] strong {
+  font-weight: 900;
+  width: 100%;
+  display: block;
+  background-color: rgb(111 73 131 / 30%);
 }
 
 .token.comment,
