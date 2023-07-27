@@ -9,6 +9,7 @@
 - [Rust语言圣经](https://github.com/sunface/rust-course), [online read](https://course.rs/)
 - [RustCn 社区](https://github.com/rustlang-cn), 一个学习研究型社区，聚焦于 Rust 语言学习和实战。
 - [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+- [Rust 101](https://github.com/tweedegolf/101-rs/tree/main), a Rust university course.
 - [Comprehensive Rust](https://google.github.io/comprehensive-rust/) by google Android team.
 
 ## Popular Tools
