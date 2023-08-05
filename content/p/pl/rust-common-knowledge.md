@@ -111,7 +111,7 @@ fn main() {
 > ErrorPropagationExpression :
 >    Expression ?
 > ```
->    
+>
 > The question mark operator (?) unwraps valid values or returns erroneous values, propagating them to the calling function. It is a unary postfix operator that can only be applied to the types Result<T, E> and Option<T>.
 
 

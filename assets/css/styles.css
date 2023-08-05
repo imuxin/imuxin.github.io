@@ -251,7 +251,7 @@ body {
 * from https://github.com/FishionYu/typora-blubook-theme/blob/master/blubook.css
 */
 blockquote {
-  background: #edf2f7;
+  background: #f5f7f9;
   border-color: #2a4e68;
   color: #2a4e68;
   border-left: 4px solid;
@@ -268,19 +268,16 @@ blockquote p {
 }
 
 blockquote.important {
-  background: #feffd6;
   border-color: #2a4e68;
   color: #2a4e68;
 }
 
 blockquote.tip {
-  background: #eee;
   border-left: 4px solid;
   border-radius: 4px;
 }
 
 blockquote.warning {
-  background: #fed3d9;
   border-color: #da422f;
   color: #da422f;
 }
@@ -934,4 +931,63 @@ a.external {
   background: #fff5b8;
   color: #000;
   display: block
+}
+
+/* hint block style */
+.alert-info {
+  --hint-color: #346ddb;
+  --hint-background: #f5f7f9;
+}
+
+.alert-success {
+  --hint-color: #008847;
+  --hint-background: #f5f7f9;
+}
+
+.alert-warning {
+  --hint-color: #b95104;
+  --hint-background: #f5f7f9;
+}
+
+.alert-danger {
+  --hint-color: #d33d3d;
+  --hint-background: #f5f7f9;
+}
+
+.hints {
+  margin: 20px 0px;
+  border-left: 4px solid var(--hint-color);
+  border-radius: 4px;
+  background: var(--hint-background);
+
+  display: flex;
+  flex-direction: row;
+}
+
+.hints-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 48px;
+  height: 20px;
+
+  padding-top: 18px;
+  padding-bottom: 18px;
+  --icon-size: 18px;
+
+  >svg {
+    color: var(--hint-color);
+    width: var(--icon-size);
+  }
+
+}
+
+.hints-container {
+  flex: 1 1 0%;
+  flex-direction: column;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+  line-height: 150%;
 }
