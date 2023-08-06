@@ -10,27 +10,6 @@
 
 将 k0s.yaml 的网络配置做以下变更以支持双栈网络。该变更将网络提供者设置为 `calico` 且使用 `bird` 模式。
 
-{% code fullWidth="false" %}
-```diff
-72c68,69
-<     calico: null
----
->     calico:
->       mode: bird
-74c71,74
-<     dualStack: {}
----
->     dualStack:
->       enabled: true
->       IPv6podCIDR: "fd00::/108"
->       IPv6serviceCIDR: "fd01::/108"
-104c104
-<     provider: kuberouter
----
->     provider: calico
-```
-{% endcode %}
-
 ```diff
 72c68,69
 <     calico: null
