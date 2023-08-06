@@ -31,6 +31,25 @@
 ```
 {% endcode %}
 
+```diff
+72c68,69
+<     calico: null
+---
+>     calico:
+>       mode: bird
+74c71,74
+<     dualStack: {}
+---
+>     dualStack:
+>       enabled: true
+>       IPv6podCIDR: "fd00::/108"
+>       IPv6serviceCIDR: "fd01::/108"
+104c104
+<     provider: kuberouter
+---
+>     provider: calico
+```
+
 待更新好 k0s.yaml 后，我们启动集群。
 
 ## Troubleshooting
