@@ -2,29 +2,34 @@
 
 在上一篇 [k0s bootstrap in ubuntu](k0s-v1.26.3+k0s.0-bootstrap.md) 中，我们已经掌握了如何用 k0s 部署一个 kubernetes 集群。本文将继续探索 CNI 之双栈网络架构。
 
-> Note: k0s 中的双栈网络的部署需要使用 Calico CNI 或者自定义 CNI。
+{% hint style="info" %}
+在 k0s 中，双栈网络的部署需要使用 Calico CNI 或者自定义 CNI。
+{% endhint %}
 
 ## 双栈配置
 
 将 k0s.yaml 的网络配置做以下变更以支持双栈网络。该变更将网络提供者设置为 `calico` 且使用 `bird` 模式。
 
-<pre class="language-diff" data-full-width="false"><code class="lang-diff">72c68,69
-<strong>&#x3C;     calico: null
-</strong>---
+{% code fullWidth="false" %}
+```diff
+72c68,69
+<     calico: null
+---
 >     calico:
 >       mode: bird
 74c71,74
-&#x3C;     dualStack: {}
+<     dualStack: {}
 ---
 >     dualStack:
 >       enabled: true
 >       IPv6podCIDR: "fd00::/108"
 >       IPv6serviceCIDR: "fd01::/108"
 104c104
-&#x3C;     provider: kuberouter
+<     provider: kuberouter
 ---
 >     provider: calico
-</code></pre>
+```
+{% endcode %}
 
 待更新好 k0s.yaml 后，我们启动集群。
 
@@ -122,8 +127,7 @@ sudo ip -6 addr add 21DA:D3::/48 dev ens5
 
 待更新 ipv6 的地址后，calico-node 成功运行了，且 “ip 自动发现”相关日志如下：
 
-```log
-...
+<pre class="language-log"><code class="lang-log">...
 
 2023-07-03 07:31:27.456 [INFO][9] startup/startup.go 485: Initialize BGP data
 2023-07-03 07:31:27.457 [DEBUG][9] startup/interfaces.go 79: Querying interface addresses Interface="ens5"
@@ -136,7 +140,7 @@ sudo ip -6 addr add 21DA:D3::/48 dev ens5
 2023-07-03 07:31:27.458 [DEBUG][9] startup/interfaces.go 99: Found valid IP address and network CIDR=fe80::5054:ff:fea6:a0a0/64
 2023-07-03 07:31:27.458 [DEBUG][9] startup/filtered.go 43: Check interface Name="ens5"
 2023-07-03 07:31:27.458 [DEBUG][9] startup/filtered.go 45: Check address CIDR=21da:d3::/48
-2023-07-03 07:31:27.458 [INFO][9] startup/autodetection_methods.go 103: Using autodetected IPv6 address on interface ens5: 21da:d3::/48
-
+<strong>2023-07-03 07:31:27.458 [INFO][9] startup/autodetection_methods.go 103: Using autodetected IPv6 address on interface ens5: 21da:d3::/48
+</strong>
 ...
-```
+</code></pre>

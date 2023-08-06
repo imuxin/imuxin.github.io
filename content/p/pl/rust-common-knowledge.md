@@ -1,6 +1,6 @@
 # Rust 必知必会
 
-## String and \&str
+## "String" and "\&str"
 
 `String`，“堆”上动态分配 string 类型，和 Vec 类似（查看标准库的 String 定义可以看到其 struct 里包含一个类型为 `vec: Vec<u8>` 的成员）。在你需要拥有其所有权或修改 string 的值的时候可以使用 String 类型。
 
@@ -66,7 +66,7 @@ fn main() {
 }
 ```
 
-为处理上述这种未知定义的情况，Rust 引入了两种类型  `Options` 及 `Result`。Options 一般表示变量的两面性：1. 不存在；2. 具体的值。它在 Rust 中的定义如下所示。
+为处理上述这种未知定义的情况，Rust 引入了两种类型 `Options` 及 `Result`。Options 一般表示变量的两面性：1. 不存在；2. 具体的值。它在 Rust 中的定义如下所示。
 
 ```rust
 pub enum Option<T> {
@@ -101,10 +101,10 @@ fn main() {
 ```
 
 {% hint style="danger" %}
-需要注意的是，如果 Option 真实为 None 或 Result 真实为 Err，则程序执行 unwrap 的时候 panic，使整个程序就此崩溃。所以建议开发者不要轻易使用 unwrap 函数。
+需要注意的是，如果 Option 真实为 None 或 Result 真实为 Err，则程序执行 `unwrap` 的时候会 panic，使整个程序就此崩溃。所以建议开发者不要轻易使用 unwrap 函数。
 {% endhint %}
 
-除了 `unwrap` 函数，Rust 还提供了问号操作符（[The question mark operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator)）来简化 Result 类型的展开。
+除了 `unwrap` 函数，Rust 还提供了**问号操作符**（[The question mark operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator)）来简化 Result 类型的展开。
 
 > ```
 > Syntax
@@ -112,8 +112,7 @@ fn main() {
 >    Expression ?
 > ```
 >
-> The question mark operator (?) unwraps valid values or returns erroneous values, propagating them to the calling function. It is a unary postfix operator that can only be applied to the types Result<T, E> and Option<T>.
-
+> The question mark operator (?) unwraps valid values or returns erroneous values, propagating them to the calling function. It is a unary postfix operator that can only be applied to the types Result\<T, E> and Option.
 
 正如 Rust 对 `?` 操作符解释的那样，对 Result 进行展开，若 `Result` 是 **Err** 则直接返回，否则将 `Result` 的正确结果赋值给变量。这样就有了一个隐含的约束：使用 `?` 操作符的函数的返回值必须是 `Result` 类型。
 
