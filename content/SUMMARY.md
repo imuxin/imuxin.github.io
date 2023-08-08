@@ -23,6 +23,7 @@
     * [Understand Raft](p/alg/raft.md)
   * [Programming Language](p/pl/README.md)
     * [lein Environment Setup](p/pl/clojure-lein-setup.md)
+    * [c++ stl 入门篇](p/pl/cpp-stl-01.md)
     * [Assignment of GO](p/pl/go-assignment.md)
     * [channel](p/pl/go-chan.md)
     * [context](p/pl/go-context.md)
