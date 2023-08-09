@@ -190,7 +190,36 @@ body {
   font-weight: 400;
 }
 
-.content h1 {
+.content {
+
+  >h2::before,
+  >h3::before,
+  >h4::before {
+    color: var(--color-hyper-link);
+    font-style: italic;
+    font-family: var(--body-font-family);
+    font-size: 12px;
+    position: absolute;
+    opacity: 0.4;
+  }
+}
+
+.content>h2::before {
+  content: "##";
+  left: 92px;
+}
+
+.content>h3::before {
+  content: "###";
+  left: 86px;
+}
+
+.content>h4::before {
+  content: "####";
+  left: 80px;
+}
+
+.content>h1 {
   color: #000000;
   font-weight: 700;
   font-size: 200%;
@@ -199,10 +228,10 @@ body {
   padding-bottom: 10px;
 }
 
-.content h2 {
+.content>h2 {
   line-height: 24px;
   font-weight: 500;
-  font-family: var(--h2-font-family), "Open Sans", Georgia, Sans Serif;
+  font-family: var(--h2-font-family);
   font-size: 150%;
   margin: 15px 0px 10px 0px;
   color: #3c3c3c;
@@ -211,20 +240,26 @@ body {
   border-bottom: 1px solid var(--color-border-muted);
 }
 
-.content h3 {
+.content>h3 {
   padding-top: 1em;
   padding-bottom: 0.3em;
   line-height: 20px;
   color: #505050;
-  font-family: var(--h3-font-family), Georgia, Sans Serif;
-  font-style: italic;
+  font-family: var(--h3-font-family);
   font-size: 129%;
   font-weight: 500;
+  border-bottom: 1px solid var(--color-border-muted);
 }
 
-.content h4 {
+.content>h4 {
+  line-height: 20px;
+  padding-top: 1em;
+  padding-bottom: 0.3em;
+  color: #505050;
   font-size: 118%;
-  text-decoration: underline;
+  font-weight: 500;
+  font-family: var(--h4-font-family);
+  /* border-bottom: 1px solid var(--color-border-muted); */
 }
 
 .content h2.letter {

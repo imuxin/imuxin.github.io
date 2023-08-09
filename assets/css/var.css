@@ -2,7 +2,8 @@
   /* font */
   --h1-font-family: 'Comfortaa', 'Noto Sans SC';
   --h2-font-family: 'Comfortaa', 'Noto Sans SC';
-  --h3-font-family: 'Inconsolata', 'Noto Sans SC';
+  --h3-font-family: 'Comfortaa', 'Noto Sans SC';
+  --h4-font-family: 'Comfortaa', 'Noto Sans SC';
   --body-font-family: 'Inconsolata', 'Noto Sans SC';
   --grey-margin-font-family: 'Inconsolata', 'Noto Sans SC';
   --quotes-font-family: 'Averia Gruesa Libre', 'Noto Sans SC';
@@ -10,4 +11,5 @@
 
   /* color */
   --color-border-muted: hsla(210, 18%, 87%, 1);
+  --color-hyper-link: #3c5872;
 }
