@@ -3,6 +3,7 @@
 ## 2023
 
 - [ ] 2023/\*/\* [](/todo.md)
+- [x] 2023/12/15 [macbook 上安装 ubuntu](/content/tips/ubuntu-on-mac.md)
 - [ ] 2023/08/08 ⏳ [c++ stl 入门篇](/content/p/pl/cpp-stl-01.md)
 - [x] 2023/07/03 [K0S dual stack](/content/cloud-native/k0s-dual-stack.md)
 - [x] 2023/06/29 [A brief guide to Gateway API](/content/cloud-native/k8s-gateway-api.md) `istio` `gateway api`
