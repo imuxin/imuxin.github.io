@@ -18,7 +18,9 @@
 插上 U 盘，重启 macbook，长按 `option` 键，出现磁盘选择界面，此时选择 EFI Boot 进行安装。
 后续步骤和以往 ubuntu 系统安装步骤一致，不再赘述。
 
-## 激活 camera 设备
+## CookList
+
+### 激活 camera 设备
 
 源于使用腾讯会议的时候，打开摄像头失败，原因是系统并为识别到摄像头设备。经过实践，将步骤记录如下：
 
@@ -58,7 +60,16 @@ dd bs=1 skip=1625840 count=19040 if=AppleCamera.sys of=1874_01XX.dat
 depmod # Run depmod for the kernel to be able to find and load it
 modprobe facetimehd # Load kernel module
 ```
-## Reboot
+7. Reboot
+
+### Wireless 不显示问题
+
+更换驱动程序
+```bash
+sudo apt-get update
+sudo apt-get purge bcmwl-kernel-source
+sudo apt-get install firmware-b43-installer
+```
 
 ## 参考链接
 
