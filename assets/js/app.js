@@ -427,7 +427,11 @@ function router() {
 
   $.get(path, function (data) {
     $(app.error_id).hide();
-    if (["./about/resume.md", "./about/resume-en.md"].includes(path)) {
+    var secret_content_paths = [
+      "./about/resume.md",
+      "./about/resume-en.md"
+    ]
+    if (secret_content_paths.includes(path)) {
       data = b64_to_utf8(data);
     }
 
