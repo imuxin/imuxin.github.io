@@ -51,3 +51,4 @@
 * [literature](literature/README.md)
   * [poetry](literature/poetry/README.md)
     * [议论题材](literature/poetry/argu.md)
+* [Note-Taking](note-taking.md)
