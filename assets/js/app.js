@@ -460,7 +460,7 @@ function router() {
     });
 
     // dispatch DOMContentLoaded event to make swimlanes work
-    trigger_DOMContentLoaded();
+    // trigger_DOMContentLoaded();
 
     // 当前阅读进度
     {
