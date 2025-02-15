@@ -68,6 +68,16 @@
    EOF
    ```
 
+### Step4: Setup https proxy for downloading images
+
+```bash
+sudo mkdir -p /etc/systemd/system/k0scontroller.service.d
+sudo tee -a /etc/systemd/system/k0scontroller.service.d/http-proxy.conf <<EOF
+[Service]
+Environment=CONTAINERD_HTTPS_PROXY=http://10.0.0.1:1081
+EOF
+```
+
 ## Start master
 
 use `sudo k0s config create` to output default config.
