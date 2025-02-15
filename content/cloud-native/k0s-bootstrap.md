@@ -76,6 +76,16 @@
 modprobe br_netfilter ; modprobe nf_nat ; modprobe xt_REDIRECT ; modprobe xt_owner; modprobe iptable_nat; modprobe iptable_mangle; modprobe iptable_filter
 ```
 
+### Step5: Setup https proxy for downloading images
+
+```bash
+sudo mkdir -p /etc/systemd/system/k0scontroller.service.d
+sudo tee -a /etc/systemd/system/k0scontroller.service.d/http-proxy.conf <<EOF
+[Service]
+Environment=CONTAINERD_HTTPS_PROXY=http://10.0.0.1:1081
+EOF
+```
+
 ## Start k0s
 
 ```bash
