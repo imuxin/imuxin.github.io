@@ -70,6 +70,8 @@
 
 ### Step4: Setup https proxy for downloading images
 
+⚠️ 注意：以下配置在 Istio Ambient 模式下会引起 Pod 无法运行，原因是 istio-cni 调用 kube-apiserver 请求会被代理劫持
+
 ```bash
 sudo mkdir -p /etc/systemd/system/k0scontroller.service.d
 sudo tee -a /etc/systemd/system/k0scontroller.service.d/http-proxy.conf <<EOF
@@ -122,7 +124,7 @@ use `sudo k0s config create` to output default config.
 
    ```bash
    # install k0s controller
-   sudo k0s install controller -c k0s.yaml --enable-worker
+   sudo k0s install controller -c k0s.yaml --enable-worker --no-taints
    ## if you want to deploy single node, just append "--single" at the end
 
    # start service
