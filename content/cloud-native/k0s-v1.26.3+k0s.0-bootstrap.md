@@ -60,11 +60,12 @@
    ```bash
    sudo mkdir -p /etc/nerdctl/ && \
    sudo tee /etc/nerdctl/nerdctl.toml <<EOF
-   debug          = false
-   debug_full     = false
-   address        = "unix:///run/k0s/containerd.sock"
-   namespace      = "k8s.io"
-   cgroup_manager = "cgroupfs"
+   debug             = false
+   debug_full        = false
+   address           = "unix:///run/k0s/containerd.sock"
+   namespace         = "k8s.io"
+   cgroup_manager    = "cgroupfs"
+   insecure_registry = true
    EOF
    ```
 
