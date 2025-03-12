@@ -148,6 +148,24 @@ sudo k0s install worker --token-file /path/to/token/file
 sudo k0s start
 ```
 
+## Containerd configuration (hot reload)
+
+cat /etc/k0s/containerd.d/privateregistry.toml 
+
+```toml
+[plugins."io.containerd.grpc.v1.cri".registry]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."lo-docker.fntrix.org"]
+      endpoint = ["http://lo-docker.fntrix.org"]
+
+  [plugins."io.containerd.grpc.v1.cri".registry.configs]
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."lo-docker.fntrix.org".tls]
+      insecure_skip_verify = true 
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."lo-docker.fntrix.org".auth]
+      username = "admin"
+      password = "$muxin0077"
+```
+
 ## Verify
 
 Check **k0scontroller** systemd service status is **running** by using `systemctl status k0scontroller.service`.
